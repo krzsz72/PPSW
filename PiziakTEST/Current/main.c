@@ -1,8 +1,7 @@
 #include <LPC21xx.H>
 #include "lancuchy.h"
 
-
-#define NULL 0x0;
+#define NULL '\0'
 
 //int test;
 int ipin=0x10000; // pin P1.16
@@ -20,21 +19,54 @@ void Delay(unsigned long mili){
 
 
 
-void CopyString(char pcSource[], char pcDestination[]) {
-    int i = 0;
-    /*do
-    {
-        pcDestination[i] = pcSource[i];
-        i++;
-    } while (pcSource[i]!='\0');*/
 
-    for (i = 0; pcSource[i] != 0x0; i++)
+
+void CopyString(char pcSource[], char pcDestination[]) {
+    unsigned char ucIndexCharToCopy = 0;
+   
+    for (ucIndexCharToCopy = 0; pcSource[ucIndexCharToCopy] != NULL; ucIndexCharToCopy++)
     {
-        pcDestination[i] = pcSource[i];
+        pcDestination[ucIndexCharToCopy] = pcSource[ucIndexCharToCopy];
     }
-    pcDestination[i] = pcSource[i];
+    pcDestination[ucIndexCharToCopy] = pcSource[ucIndexCharToCopy];
 
 };
+
+enum CompResult {
+    DIFFERENT,
+    EQUAL
+};
+
+enum CompResult eCompareString(char pcStr1[], char pcStr2[]) {
+    unsigned char ucComparedChar = 0;
+    for (ucComparedChar = 0; pcStr1[ucComparedChar] != NULL; ucComparedChar++)
+    {
+        if (pcStr1[ucComparedChar] != pcStr2[ucComparedChar])
+        {
+            return DIFFERENT;
+        };
+    };
+    return EQUAL;
+}
+
+void AppendString(char pcSourceStr[], char pcDestinationStr[]) {
+    unsigned char ucDestLen = 0;
+    for (ucDestLen = 0; pcDestinationStr[ucDestLen] != NULL; ucDestLen++)
+    {
+        //licznik dlugosci pcDestinationStr
+    }
+    CopyString(pcSourceStr, pcDestinationStr + ucDestLen);
+}
+
+void ReplaceCharactersInString(char pcString[],char cOldChar, char cNewChar) {
+    unsigned char ucIndexCharToReplace = 0;
+    for (ucIndexCharToReplace = 0; pcString[ucIndexCharToReplace] != NULL; ucIndexCharToReplace++) {
+        if (pcString[ucIndexCharToReplace] == cOldChar)
+        {
+            pcString[ucIndexCharToReplace] = cNewChar;
+        }
+    }
+}
 
 
 int main(){
@@ -44,7 +76,7 @@ int main(){
 	IO1SET=ipin;
 	IO1CLR=ipin;
 
-	TestOfCopyString();
+	//TestOfCopyString();
 	
 	//test = 99;
 

@@ -3,8 +3,4 @@ C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\lancuchy\lancuchy\lancuchy.c(2,9): war
       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime.h(230,17):
       see previous definition of 'NULL'
   
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\lancuchy\lancuchy\lancuchy.c(31,12): warning C4477: 'printf' : format string '%c' requires an argument of type 'int', but variadic argument 1 has type 'char *'
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\lancuchy\lancuchy\lancuchy.c(31,12): warning C4313: 'printf': '%c' in format string conflicts with argument 1 of type 'char *'
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\lancuchy\lancuchy\lancuchy.c(32,12): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'char *'
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\lancuchy\lancuchy\lancuchy.c(32,12): warning C4313: 'printf': '%d' in format string conflicts with argument 1 of type 'char *'
   lancuchy.vcxproj -> C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\lancuchy\x64\Debug\lancuchy.exe
