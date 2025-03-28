@@ -1,9 +1,9 @@
 #include <LPC21xx.H>
 #include <stdio.h>
 
-int test;
+
 int ipin=0x10000; // pin P1.16
-int idelayCounter;
+
 
 void DelayOneMili(){
 	unsigned long uldelayCounter =0;
@@ -13,9 +13,9 @@ void DelayOneMili(){
 
 void Delay(unsigned long mili){
 	unsigned long uldelayCount=0;
-	for (idelayCounter = 0; idelayCounter<mili; idelayCounter++){
+	for (uldelayCount = 0; uldelayCount<mili; uldelayCount++){
 		DelayOneMili();
-}; // wskazanie stopera: 1.0000125 dla idelayCounter = 1500000
+	}; // wskazanie stopera: 1.0000125 dla idelayCounter = 1500000
 };
 
 
