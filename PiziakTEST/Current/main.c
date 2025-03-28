@@ -5,13 +5,20 @@ int test;
 int ipin=0x10000; // pin P1.16
 int idelayCounter;
 
-void Delay(unsigned long mili){
-	unsigned long idelayCounter;
-	unsigned long idelayMax;
-	idelayMax = 1500000*mili/1000; //nawiasy psuja???
-	
-	for (idelayCounter = 0; idelayCounter<idelayMax; idelayCounter++){}; // wskazanie stopera: 1.0000125 dla idelayCounter = 1500000
+void DelayOneMili(){
+	unsigned long uldelayCounter =0;
+	for(uldelayCounter =0; uldelayCounter <1500;uldelayCounter++){};
+
 };
+
+void Delay(unsigned long mili){
+	unsigned long uldelayCount=0;
+	for (idelayCounter = 0; idelayCounter<mili; idelayCounter++){
+		DelayOneMili();
+}; // wskazanie stopera: 1.0000125 dla idelayCounter = 1500000
+};
+
+
 
 int main(){
 	// 0000 0000 0000 0000 0001 0000 0000 0000
@@ -27,9 +34,7 @@ int main(){
 		Delay(500);
 	
 		IO1CLR=ipin;
-		idelayCounter=0;
-		Delay(500);
-		idelayCounter=0;
+		Delay(1000);
 
 }
 }
