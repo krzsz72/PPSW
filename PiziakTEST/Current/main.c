@@ -2,7 +2,14 @@
 #include <stdio.h>
 
 
-int ipin=0x10000; // pin P1.16
+//zadanie: 4.2.15
+//data: 01.04.2025
+
+//int ipin=0x10000; // pin P1.16
+#define LED0_bm 0x10000 
+#define LED1_bm 0x20000
+#define LED2_bm 0x40000
+#define LED3_bm 0x80000
 
 
 void DelayOneMili(){
@@ -20,21 +27,50 @@ void Delay(unsigned long mili){
 
 
 
+void LedInit(){
+	IO1DIR|=LED0_bm|LED1_bm|LED2_bm|LED3_bm;
+	IO1SET=LED0_bm;
+};
+
+void LedOn(unsigned char ucLedIndex){
+
+	IO1CLR=LED0_bm|LED1_bm|LED2_bm|LED3_bm;
+	switch(ucLedIndex){
+		case 0:
+			IO1SET=LED0_bm;
+			break;
+		case 1:
+					IO1SET=LED1_bm;
+					break;
+		case 2:
+					IO1SET=LED2_bm;
+					break;
+		case 3:
+					IO1SET=LED3_bm;
+					break;
+		};
+};
+
+
+
+
+
+
+
+
 int main(){
 	// 0000 0000 0000 0000 0001 0000 0000 0000
 	// 0x00010000
-	IO1DIR=ipin;
-	IO1SET=ipin;
-	IO1CLR=ipin;
-	
 
+	LedInit();	
+	
 	
 	while(1){
-		IO1SET=ipin;
-		Delay(500);
-	
-		IO1CLR=ipin;
-		Delay(1000);
+		unsigned char i =0;
+		for(i=0; i<4; i++){
+		LedOn(i);
+		Delay(250);
+		};
 
 }
 }
