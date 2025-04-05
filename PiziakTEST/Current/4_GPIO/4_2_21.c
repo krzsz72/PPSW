@@ -18,12 +18,12 @@
 
 
 
-int debugVar;
+static int debugVar;
 
 
 void DelayOneMili(){
 	unsigned long ulDelayCounter =0;
-	for(ulDelayCounter =0; ulDelayCounter <7500;ulDelayCounter++){};
+	for(ulDelayCounter =0; ulDelayCounter <1500;ulDelayCounter++){};
 
 };
 
@@ -32,7 +32,9 @@ void Delay(unsigned long ulMili){
 	for (uldelayCount = 0; uldelayCount<ulMili; uldelayCount++){
 		DelayOneMili();
 	}; // wskazanie stopera: 1.0000125 dla idelayCounter = 1500000
-};		// dla mikrokontorlera wartosc jest inna: 7500 ~= 1ms
+};
+
+
 
 void LedInit(){
 	IO1DIR|=LED0_bm|LED1_bm|LED2_bm|LED3_bm;
@@ -72,6 +74,7 @@ enum KeyboardState{
 
 enum KeyboardState eKeyboardRead(){
 	enum KeyboardState eKeyboard = RELEASED;
+
 	
 	if((IO0PIN&S0_bm)==0){
 		eKeyboard=BUTTON_0;
@@ -89,28 +92,23 @@ enum KeyboardState eKeyboardRead(){
 	return eKeyboard;
 };
 
-enum eStepDir{LEFT,RIGHT};
-void LedStep(enum eStepDir eLedDir){
-	static unsigned int uiStep;
-	switch(eLedDir){
-		case 0:
-			uiStep++;
-			LedOn(uiStep%4);
-			break;
-		case 1:
-			uiStep--;
-			LedOn(uiStep%4);
-			break;
-	};
+
+
+
+
+unsigned int uiStep;
+void StepLeft(){
+	uiStep++;
+	LedOn(uiStep%4);
+};
+void StepRight(){
+	uiStep--;
+	LedOn(uiStep%4);
 };
 
-void LedStepLeft(void){
-	LedStep(LEFT);
+void LedStep(){
+	
 };
-void LedStepRight(void){
-	LedStep(RIGHT);
-};
-
 
 
 int main(){
@@ -123,18 +121,8 @@ int main(){
 	
 	
 	while(1){
-		
-		switch(eKeyboardRead()){
-			case 2:
-				LedStepRight();
-				Delay(250);
-				break;
-			case 3:
-				LedStepLeft();
-				Delay(250);
-				break;
-		};
-
-	};
-		
+	
+		Delay(1000);
+		StepRight();
+	}
 }
