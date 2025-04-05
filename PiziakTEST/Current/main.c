@@ -2,8 +2,8 @@
 
 #define NULL '\0'
 
-//zadanie: 4.2.15
-//data: 01.04.2025
+//zadanie: 4.2.26
+//data: 05.04.2025
 
 //int ipin=0x10000; // pin P1.16
 #define LED0_bm 0x10000 
