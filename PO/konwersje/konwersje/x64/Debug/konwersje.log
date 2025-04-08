@@ -1,0 +1,6 @@
+﻿  konwersje.c
+C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\konwersje\konwersje\konwersje.c(2,9): warning C4005: 'NULL': macro redefinition
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime.h(230,17):
+      see previous definition of 'NULL'
+  
+  konwersje.vcxproj -> C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\konwersje\x64\Debug\konwersje.exe

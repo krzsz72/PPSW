@@ -4,16 +4,17 @@
 
 
 void CopyString(char pcSource[], char pcDestination[]) {
-    unsigned char ucIndexCharToCopy = 0;
+    unsigned char ucCharCounter = 0;
    
-    for (ucIndexCharToCopy = 0; pcSource[ucIndexCharToCopy] != NULL; ucIndexCharToCopy++)
+    for (ucCharCounter = 0; pcSource[ucCharCounter] != NULL; ucCharCounter++)
     {
-        pcDestination[ucIndexCharToCopy] = pcSource[ucIndexCharToCopy];
+        pcDestination[ucCharCounter] = pcSource[ucCharCounter];
     }
-    pcDestination[ucIndexCharToCopy] = pcSource[ucIndexCharToCopy];
+    pcDestination[ucCharCounter] = NULL;
 
 };
-//------^^^^^^^^^^^^^ Copy string alt
+
+/*//------^^^^^^^^^^^^^ Copy string alt
 /*do
    {
        pcDestination[i] = pcSource[i];
@@ -27,10 +28,10 @@ enum CompResult {
 };
 
 enum CompResult eCompareString(char pcStr1[], char pcStr2[]) {
-    unsigned char ucComparedChar = 0;
-    for (ucComparedChar = 0; pcStr1[ucComparedChar] != NULL; ucComparedChar++)
+    unsigned char ucCharCounter = 0;
+    for (ucCharCounter = 0; pcStr1[ucCharCounter] != NULL; ucCharCounter++)
     {
-        if (pcStr1[ucComparedChar] != pcStr2[ucComparedChar])
+        if (pcStr1[ucCharCounter] != pcStr2[ucCharCounter])
         {
             return DIFFERENT;
         };
@@ -39,20 +40,20 @@ enum CompResult eCompareString(char pcStr1[], char pcStr2[]) {
 }
 
 void AppendString(char pcSourceStr[], char pcDestinationStr[]) {
-    unsigned char ucDestLen = 0;
-    for (ucDestLen = 0; pcDestinationStr[ucDestLen] != NULL; ucDestLen++)
+    unsigned char ucCharCounter = 0;
+    for (ucCharCounter = 0; pcDestinationStr[ucCharCounter] != NULL; ucCharCounter++)
     {
         //licznik dlugosci pcDestinationStr
     }
-    CopyString(pcSourceStr, pcDestinationStr + ucDestLen);
+    CopyString(pcSourceStr, pcDestinationStr + ucCharCounter);
 }
 
 void ReplaceCharactersInString(char pcString[],char cOldChar, char cNewChar) {
-    unsigned char ucIndexCharToReplace = 0;
-    for (ucIndexCharToReplace = 0; pcString[ucIndexCharToReplace] != NULL; ucIndexCharToReplace++) {
-        if (pcString[ucIndexCharToReplace] == cOldChar)
+    unsigned char ucCharCounter = 0;
+    for (ucCharCounter = 0; pcString[ucCharCounter] != NULL; ucCharCounter++) {
+        if (pcString[ucCharCounter] == cOldChar)
         {
-            pcString[ucIndexCharToReplace] = cNewChar;
+            pcString[ucCharCounter] = cNewChar;
         }
     }
 }
