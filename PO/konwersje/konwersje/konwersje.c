@@ -7,7 +7,7 @@ void UIntToHexStr(unsigned int uiValue, char pcStr[]) {
 	{
 		pcStr[i] = (uiValue & 0xff);
 		printf("hex %x\n",pcStr[i]);
-		printf("znak %c  i=%i dupa  \n", pcStr[i],i);
+		printf("znak %c  i=%i ||||  \n", pcStr[i],i);
 		uiValue = (uiValue >> 4);
 		printf("przes %x\n============\n", uiValue);
 
