@@ -12,6 +12,8 @@
 #define LED3_bm 0x80000
 
 
+//git test
+
 void DelayOneMili(){
 	unsigned long uldelayCounter =0;
 	for(uldelayCounter =0; uldelayCounter <1500;uldelayCounter++){};
