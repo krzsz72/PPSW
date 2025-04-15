@@ -1,6 +1,7 @@
 #include <LPC21xx.H>
 
 #define NULL '\0'
+#define NIBBLE_BM 0xF
 
 //zadanie: 4.2.26
 //data: 05.04.2025
@@ -111,6 +112,46 @@ void LedStepRight(void){
 	LedStep(RIGHT);
 };
 
+void UIntToHexStr(unsigned int uiValue, char pcStr[]) {
+	unsigned char ucNibbleCounter;
+	unsigned int uiCurrentNibble = uiValue;
+	pcStr[0] = '0';
+	pcStr[1] = 'x';
+	for (ucNibbleCounter = 0; ucNibbleCounter < 4; ucNibbleCounter++)
+	{
+		uiCurrentNibble = ((uiValue >> (4 * ucNibbleCounter) & NIBBLE_BM ));
+		//printf("\nnibble: %i\n",uiCurrentNibble);
+		if (uiCurrentNibble<10)
+		{
+			pcStr[5-ucNibbleCounter] = uiCurrentNibble + '0';
+		}
+		else
+		{
+			pcStr[5-ucNibbleCounter] = uiCurrentNibble - 10 + 'A';
+		}
+		//printf("hex %x\n",pcStr[5-ucNibbleCounter);
+		//printf("znak %c \n i=%i \n", pcStr[5-ucNibbleCounter,ucNibbleCounter;
+		//printf("przes %x\n============\n", nibble);
+
+	}
+	pcStr[6] = NULL;
+	//printf("wynik po forze: \n %x \n string: %c",pcStr, pcStr);
+
+};
+
+
+void AppentUIntToString(unsigned int uiValue, char pcDestinationStr[]) {
+	unsigned char i = 0;
+	for (i = 0; pcDestinationStr[i] != NULL; i++)
+	{
+
+	}
+	UIntToHexStr(uiValue, pcDestinationStr+i);
+	
+};
+
+	int liczb=16;
+	char str[254]="ala ma kota ";
 
 
 int main(){
@@ -121,7 +162,9 @@ int main(){
 	KeyboardInit();
 	//4.2.20
 	
+	AppentUIntToString(liczb,str);
 	
+	/*
 	while(1){
 		
 		switch(eKeyboardRead()){
@@ -135,6 +178,6 @@ int main(){
 				break;
 		};
 
-	};
+	};*/
 		
 }
