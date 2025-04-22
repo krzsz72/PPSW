@@ -4,7 +4,7 @@
 
 void UIntToHexStr(unsigned int uiValue, char pcStr[]) {
 	unsigned char ucNibbleCounter;
-	unsigned int uiCurrentNibble = uiValue;
+	unsigned int uiCurrentNibble;
 	pcStr[0] = '0';
 	pcStr[1] = 'x';
 	for (ucNibbleCounter = 0; ucNibbleCounter < 4; ucNibbleCounter++)
@@ -33,17 +33,27 @@ void TestOfUIntToHexStr() {
 enum Result {OK,ERROR};
 enum Result eHexStringToUInt(char pcStr[], unsigned int* puiValue) {
 	unsigned char ucNibbleCounter= 0;
-	if ( (pcStr[0] == '0') && (pcStr[1] == 'x') && (pcStr[2]!=NULL) && !(pcStr[6]))
+	if ( (pcStr[0] == '0') && (pcStr[1] == 'x') && (pcStr[2]!=NULL) )
 	{
-		for (ucNibbleCounter= 0; ucNibbleCounter< 4; ucNibbleCounter++, *puiValue=*puiValue<<4)
+		for (ucNibbleCounter = 0; ucNibbleCounter <= 4; ucNibbleCounter++)
 		{
-			if ((pcStr[ucNibbleCounter+2]-'0')<10)
+			unsigned char ucCurrentChar = pcStr[ucNibbleCounter + 2];
+			if (ucCurrentChar==NULL)
 			{
-				*puiValue |= pcStr[ucNibbleCounter+ 2]-'0';
+				break;
+			}
+			else if (ucCurrentChar<='9')
+			{
+				*puiValue |= ucCurrentChar-'0';
 			}
 			else
 			{
-				*puiValue |= pcStr[ucNibbleCounter+ 2] - 'A'+10;
+				*puiValue |= ucCurrentChar -'A'+10;
+			}
+			*puiValue = *puiValue << 4;
+			if (ucNibbleCounter==4)
+			{
+				return ERROR;
 			}
 		}
 		*puiValue = *puiValue >> 4;
@@ -80,5 +90,6 @@ void TestOfAppendUIntToString() {
 };
 
 int main() {
-	TestOfAppendUIntToString();
+	TestOfeHexStringToUInt();
+	//TestOfUIntToHexStr();
 };
