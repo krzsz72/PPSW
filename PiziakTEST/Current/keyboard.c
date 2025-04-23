@@ -16,16 +16,12 @@ enum KeyboardState eKeyboardRead(void){
 		
 		if((IO0PIN&S0_bm)==0){
 			eKeyboard=BUTTON_0;
+	}else                     //ON  					OFF
+		if((IO0PIN&S1_bm)==0){	//0x00					0x40
+			eKeyboard=BUTTON_1;   //							
 	}else
-		if((IO0PIN&S1_bm)==0){	//X0XX XXXX
-														//0100 0000	| AND
-														//0000 0000
-			eKeyboard=BUTTON_1;
-	}else
-		if((IO0PIN&S2_bm)==0){	//XX0X XXXX
-                            //0010 0000	| AND
-														//0000 0000
-			eKeyboard=BUTTON_2;
+		if((IO0PIN&S2_bm)==0){	//0x00					0x20
+			eKeyboard=BUTTON_2;   //							
 	}else
 		if((IO0PIN&S3_bm)==0){
 			eKeyboard=BUTTON_3;

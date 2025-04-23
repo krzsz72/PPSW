@@ -7,8 +7,11 @@
 #define LED3_bm (1<<19)
 
 void LedInit(){
-	IO1DIR|=LED0_bm|LED1_bm|LED2_bm|LED3_bm;
+	IO1DIR = 0x1101101;
+	
+	IO1DIR = LED0_bm|LED1_bm|LED2_bm|LED3_bm;
 	IO1SET=LED0_bm;
+	
 };
 
 void LedOn(unsigned char ucLedIndex){
@@ -37,13 +40,13 @@ void LedStep(enum eStepDir eLedDir){
 	switch(eLedDir){
 		case 0:
 			uiStep++;
-			LedOn(uiStep%4);
 			break;
 		case 1:
 			uiStep--;
-			LedOn(uiStep%4);
 			break;
 	};
+	LedOn(uiStep%4);
+
 };
 
 void LedStepLeft(void){
