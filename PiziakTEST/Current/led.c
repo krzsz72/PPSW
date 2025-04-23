@@ -7,9 +7,9 @@
 #define LED3_bm (1<<19)
 
 void LedInit(){
-	IO1DIR = 0x1101101;
+	//IO1DIR = 0x1101101;
 	
-	IO1DIR = LED0_bm|LED1_bm|LED2_bm|LED3_bm;
+	IO1DIR |= LED0_bm|LED1_bm|LED2_bm|LED3_bm;
 	IO1SET=LED0_bm;
 	
 };
