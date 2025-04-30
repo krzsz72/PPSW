@@ -4,8 +4,8 @@
 
 #define NULL '\0'
 
-//zadanie: 5.2
-//data: 16.04.2025
+//zadanie: 6
+//data: 30.04.2025
 
 
 int debugVar;
@@ -29,7 +29,7 @@ int main(){
 
 	LedInit();	
 	KeyboardInit();
-	//5.2
+	//6
 	
 
 	while(1){
