@@ -40,8 +40,7 @@ int main(){
 						}
 						if(eKeyboardRead()==BUTTON_2){
 						eLedState=STEP_RIGHT;
-						}
-				
+						}				
 				break;
 				
 				case STEP_LEFT:
@@ -51,6 +50,7 @@ int main(){
 						LedStepLeft();
 						uiStepCounter++;				
 						}
+
 				break;
 				case STEP_RIGHT:
 					if(eKeyboardRead()==BUTTON_1){
@@ -63,25 +63,6 @@ int main(){
 			}
 		Delay(100);
 
-
-
-
-
-
-		/*		
-		switch(eKeyboardRead()){
-			case BUTTON_1:
-				LedStepRight();
-				Delay(250);
-				break;
-			case BUTTON_2:
-				LedStepLeft();
-				Delay(250);
-				break;
-			default:			
-				break;
-		};
-*/
 	};
 		
 };
