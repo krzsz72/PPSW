@@ -4,7 +4,7 @@
 
 #define NULL '\0'
 
-//zadanie: 6.6
+//zadanie: 6.7
 //data: 07.05.2025
 
 
