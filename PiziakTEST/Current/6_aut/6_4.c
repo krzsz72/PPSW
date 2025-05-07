@@ -4,7 +4,7 @@
 
 #define NULL '\0'
 
-//zadanie: 6.6
+//zadanie: 6.4
 //data: 07.05.2025
 
 
@@ -24,44 +24,36 @@ void Delay(unsigned long ulMili){
 	}; // wskazanie stopera: 1.0000125 dla idelayCounter = 1500000
 };		// dla mikrokontorlera wartosc jest inna: 7500 ~= 1ms
 
-	enum LedState{STOP,STEP_LEFT,STEP_RIGHT};
-	enum LedState eLedState=STOP;
+	enum LedState{STOP,STEP};
+	enum LedState eLedState=STEP;
 	
 	unsigned int uiStepCounter=0;
 	
 int main(){
 	LedInit();	
 	KeyboardInit();
+	//6.4
 	while(1){
 		switch(eLedState){
 				case STOP:
 						if(eKeyboardRead()==BUTTON_0){
-						eLedState=STEP_LEFT;
-						}
-						if(eKeyboardRead()==BUTTON_2){
-						eLedState=STEP_RIGHT;
+						eLedState=STEP;
+						uiStepCounter=0;
 						}
 				
 				break;
 				
-				case STEP_LEFT:
-					if(eKeyboardRead()==BUTTON_1){
-						eLedState=STOP;
-					}else{
-						LedStepLeft();
-						uiStepCounter++;				
-						}
-				break;
-				case STEP_RIGHT:
-					if(eKeyboardRead()==BUTTON_1){
-						eLedState=STOP;
-					}else{
+				case STEP:
+					if(uiStepCounter<3){
 						LedStepRight();
 						uiStepCounter++;				
+						
+					}else{
+						eLedState=STOP;
 						}
 				break;
 			}
-		Delay(100);
+		Delay(1000);
 
 
 

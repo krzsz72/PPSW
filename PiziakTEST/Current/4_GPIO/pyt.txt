@@ -2,3 +2,4 @@ skad sie wezmie wartosc w tym
 
 ktoredy informacja trafi do pcvlaue
 
+co to jest dekodowanie tokenow
