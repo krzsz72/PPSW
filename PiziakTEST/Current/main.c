@@ -5,7 +5,7 @@
 #define NULL '\0'
 
 //zadanie: 6
-//data: 30.04.2025
+//data: 07.05.2025
 
 
 int debugVar;
