@@ -18,5 +18,13 @@
     <ClCompile Include="dekodowane.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="lancuchy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lancuchy.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
