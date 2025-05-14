@@ -24,7 +24,7 @@ void Delay(unsigned long ulMili){
 	}; // wskazanie stopera: 1.0000125 dla idelayCounter = 1500000
 };		// dla mikrokontorlera wartosc jest inna: 7500 ~= 1ms
 
-	enum LedState{STOP,STEP_LEFT,STEP_RIGHT};
+	enum LedState{STOP,STEP_LEFT,STEP_RIGHT,WIPER};
 	enum LedState eLedState=STOP;
 	
 	unsigned int uiStepCounter=0;
@@ -43,22 +43,78 @@ int main(){
 						}				
 				break;
 				
-				case STEP_LEFT:
-					if(eKeyboardRead()==BUTTON_1){
-						eLedState=STOP;
-					}else{
-						LedStepLeft();
-						uiStepCounter++;				
-						}
-
-				break;
 				case STEP_RIGHT:
 					if(eKeyboardRead()==BUTTON_1){
 						eLedState=STOP;
 					}else{
 						LedStepRight();
-						uiStepCounter++;				
 						}
+				break;
+				
+				case STEP_LEFT:
+					if(eKeyboardRead()==BUTTON_1){
+						eLedState=STOP;
+					}else if(eKeyboardRead()==BUTTON_3){
+						eLedState=WIPER;
+						uiStepCounter=0;
+
+					}
+					else{
+						LedStepLeft();
+						}
+				break;
+						
+				case WIPER:
+					
+						//s3 zatrzymanie, s2 przejscie do prawa
+						
+					if(eKeyboardRead()==BUTTON_2)
+						{
+						eLedState=STEP_RIGHT;
+						}
+					else{
+						eLedState=WIPER;
+						
+						if(uiStepCounter>=1){
+							uiStepCounter++;
+							LedStepLeft();
+						}
+						else{
+							uiStepCounter--;
+							LedStepRight();
+						}
+						
+						
+						
+						
+						
+						
+						
+						
+						/*
+						
+						if(uiStepCounter>=2)
+							{
+							uiStepCounter=0;
+							}
+						else
+							{
+						uiStepCounter++;
+						  }
+							
+							
+						if(uiStepCounter<2)
+							{
+							if(uiStepCounter<1)
+								{
+								LedStepLeft();
+								}
+							else
+								{
+								LedStepRight();
+								}
+						};*/
+					}
 				break;
 			}
 		Delay(100);

@@ -1,0 +1,2 @@
+wprowadzic celowy blad w funkcji ktory test to wychywyci
+sprawdzic czy wskazuje na odpowiedni adres
