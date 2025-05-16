@@ -36,7 +36,6 @@ struct Keyword asKeywordList[MAX_KEYWORD_NR] = {
 };
 
 
-
 unsigned char ucTokenNr;
 unsigned char ucFindTokensInString(char* pcString) {
 	enum TokenFinderState {TOKEN,DELIMITER};
@@ -52,8 +51,9 @@ unsigned char ucFindTokensInString(char* pcString) {
 		case DELIMITER:
 			if (ucCurrentChar!=' ' & ucCurrentChar!=NULL)
 			{
-				ucTokenNr++;
 				eTokenFinderState = TOKEN;
+				asToken[ucTokenNr].uValue.pcString = pcString+ucCharCounter;
+				ucTokenNr++;
 			}
 			else if (ucCurrentChar==' ')
 			{
@@ -79,20 +79,22 @@ unsigned char ucFindTokensInString(char* pcString) {
 				eTokenFinderState = TOKEN;
 			}
 			break;
-
 		}
 	}
-
 };
 
 
 enum Result {OK,ERROR};
-
 enum Result eStringToKeyword(char pcStr[], enum KeywordCode *peKeywordCode) {
-
-
-
-
+	
+	for (unsigned char ucKeywordCount = 0; ucKeywordCount < MAX_KEYWORD_NR; ucKeywordCount++)
+	{
+		if (eCompareString(pcStr, asKeywordList[ucKeywordCount].cString)==EQUAL)
+		{
+			*peKeywordCode = asKeywordList[ucKeywordCount].eCode;
+			return OK;
+		} 
+	}
 };
 
 void DecodeTokens(void) {
@@ -116,8 +118,17 @@ void DecodeMsg(char *pcString) {
 
 
 
-
+enum KeywordCode kod;
+char litera;
 int main() {
-	char teststring[] = "load 0x20 immediately";
+	char teststring[] = "reset load reset";
 	DecodeMsg(teststring);
+	for (int i = 0; i < 3; i++)
+	{
+		if (eStringToKeyword(asToken[i].uValue.pcString, &kod)) {
+			printf("\nestring result 1 (ERROR)\n");
+		}
+	}
+	printf("\nkod : %i\n", kod);
+
 }
