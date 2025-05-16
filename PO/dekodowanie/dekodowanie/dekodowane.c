@@ -1,4 +1,5 @@
 #include "lancuchy.h"
+#include "konwersje.h"
 #define NULL '\0'
 
 
@@ -21,6 +22,7 @@ typedef struct Token {
 #define MAX_TOKEN_NR 3
 
 struct Token asToken[MAX_TOKEN_NR];
+
 
 #define MAX_KEYWORD_STRING_LTH 10
 typedef struct Keyword
@@ -84,7 +86,7 @@ unsigned char ucFindTokensInString(char* pcString) {
 };
 
 
-enum Result {OK,ERROR};
+//enum Result {OK,ERROR};
 enum Result eStringToKeyword(char pcStr[], enum KeywordCode *peKeywordCode) {
 	
 	for (unsigned char ucKeywordCount = 0; ucKeywordCount < MAX_KEYWORD_NR; ucKeywordCount++)
@@ -95,11 +97,41 @@ enum Result eStringToKeyword(char pcStr[], enum KeywordCode *peKeywordCode) {
 			return OK;
 		} 
 	}
+	return ERROR;
 };
 
-void DecodeTokens(void) {
-	//dostaje ponullowane tokeny i je nazywa
 
+//enum KeywordCode kod;
+
+void DecodeTokens(void) {
+	
+	//dostaje ponullowane tokeny i je nazywa
+	enum KeywordCode kod;
+	unsigned int liczba = 0;
+	struct Token *currToken;
+
+	for (int i = 0; i < ucTokenNr; i++)
+	{
+		currToken = &asToken[i];
+		//printf("\ntoken: %x\n",currToken);
+		if (eStringToKeyword(currToken->uValue.pcString, &kod) == OK)
+		{
+			currToken->eType = KEYWORD;
+			currToken->uValue.eKeyword = kod;
+
+			//printf("\nkod : %i\n", kod);
+		}
+		else if (eHexStringToUInt(currToken->uValue.pcString, &liczba) == OK)
+		{
+			currToken->eType = NUMBER;
+			currToken->uValue.uiNumber = liczba;
+			printf("liczba %i",liczba);
+		}
+		else
+		{
+			currToken->eType = STRING;
+		}
+	}
 };
 
 
@@ -111,24 +143,17 @@ void DecodeMsg(char *pcString) {
 
 	ReplaceCharactersInString(pcString,' ',NULL);
 	DecodeTokens();
-	printf("string wej : %s", pcString);
+	//printf("string wej : %s", pcString);
 
 };
 
 
 
 
-enum KeywordCode kod;
 char litera;
 int main() {
-	char teststring[] = "reset load reset";
+	char teststring[] = "load 0x20 immediately";
 	DecodeMsg(teststring);
-	for (int i = 0; i < 3; i++)
-	{
-		if (eStringToKeyword(asToken[i].uValue.pcString, &kod)) {
-			printf("\nestring result 1 (ERROR)\n");
-		}
-	}
-	printf("\nkod : %i\n", kod);
+
 
 }
