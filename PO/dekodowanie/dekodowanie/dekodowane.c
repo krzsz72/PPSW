@@ -39,29 +39,56 @@ struct Keyword asKeywordList[MAX_KEYWORD_NR] = {
 
 unsigned char ucTokenNr;
 unsigned char ucFindTokensInString(char* pcString) {
-	enum automatstate {TOKEN,DELIMITER};
-	enum automatstate eautomatstate = DELIMITER;
-	for (ucTokenNr = 0; ucTokenNr< MAX_TOKEN_NR; ucTokenNr++)
+	enum TokenFinderState {TOKEN,DELIMITER};
+	enum TokenFinderState eTokenFinderState = DELIMITER;
+
+	unsigned char ucCharCounter;
+	unsigned char ucCurrentChar;
+	for (ucCharCounter = 0; ; ucCharCounter++)
 	{
-		switch (eautomatstate)
+		ucCurrentChar = pcString[ucCharCounter];
+		switch (eTokenFinderState)
 		{
 		case DELIMITER:
-			break;
-		case TOKEN:
+			if (ucCurrentChar!=' ' & ucCurrentChar!=NULL)
+			{
+				ucTokenNr++;
+				eTokenFinderState = TOKEN;
+			}
+			else if (ucCurrentChar==' ')
+			{
+				eTokenFinderState = DELIMITER;
+			}
+			else
+			{
+				return ucTokenNr;
+			}
 			break;
 
-		default:
+		case TOKEN:
+			if (ucCurrentChar==NULL)
+			{
+				return ucTokenNr;
+			}
+			else if (ucCurrentChar==' ')
+			{
+				eTokenFinderState = DELIMITER;
+			}
+			else
+			{
+				eTokenFinderState = TOKEN;
+			}
 			break;
+
 		}
 	}
-
 
 };
 
 
-enum eResult {OK,ERROR};
+enum Result {OK,ERROR};
 
-enum eResult eStringToKeyword(char pcStr[], enum KeywordCode *peKeywordCode) {
+enum Result eStringToKeyword(char pcStr[], enum KeywordCode *peKeywordCode) {
 
 
 
@@ -77,14 +104,14 @@ void DecodeTokens(void) {
 void DecodeMsg(char *pcString) {
 
 	ucFindTokensInString(pcString);
+
+	printf("\ntoken nr: %i\n", ucTokenNr);
+
 	ReplaceCharactersInString(pcString,' ',NULL);
 	DecodeTokens();
 	printf("string wej : %s", pcString);
 
 };
-
-
-
 
 
 
