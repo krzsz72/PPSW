@@ -128,9 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="dekodowane.c" />
+    <ClCompile Include="konwersje.c" />
     <ClCompile Include="lancuchy.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="konwersje.h" />
     <ClInclude Include="lancuchy.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

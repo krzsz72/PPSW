@@ -7,12 +7,20 @@
       "RelativeMoniker": "D:0:0:{5C7290F3-344A-46BE-A739-07D1A356827E}|dekodowanie\\dekodowanie.vcxproj|solutionrelative:dekodowanie\\dekodowane.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C7290F3-344A-46BE-A739-07D1A356827E}|dekodowanie\\dekodowanie.vcxproj|C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\lancuchy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5C7290F3-344A-46BE-A739-07D1A356827E}|dekodowanie\\dekodowanie.vcxproj|solutionrelative:dekodowanie\\lancuchy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5C7290F3-344A-46BE-A739-07D1A356827E}|dekodowanie\\dekodowanie.vcxproj|C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\lancuchy.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5C7290F3-344A-46BE-A739-07D1A356827E}|dekodowanie\\dekodowanie.vcxproj|solutionrelative:dekodowanie\\lancuchy.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C7290F3-344A-46BE-A739-07D1A356827E}|dekodowanie\\dekodowanie.vcxproj|C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\konwersje.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5C7290F3-344A-46BE-A739-07D1A356827E}|dekodowanie\\dekodowanie.vcxproj|solutionrelative:dekodowanie\\konwersje.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C7290F3-344A-46BE-A739-07D1A356827E}|dekodowanie\\dekodowanie.vcxproj|C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\konwersje.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5C7290F3-344A-46BE-A739-07D1A356827E}|dekodowanie\\dekodowanie.vcxproj|solutionrelative:dekodowanie\\konwersje.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C7290F3-344A-46BE-A739-07D1A356827E}|dekodowanie\\dekodowanie.vcxproj|C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\lancuchy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5C7290F3-344A-46BE-A739-07D1A356827E}|dekodowanie\\dekodowanie.vcxproj|solutionrelative:dekodowanie\\lancuchy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,28 +34,28 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "lancuchy.h",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\lancuchy.h",
-              "RelativeDocumentMoniker": "dekodowanie\\lancuchy.h",
-              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\lancuchy.h",
-              "RelativeToolTip": "dekodowanie\\lancuchy.h",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAiwBsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "konwersje.h",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\konwersje.h",
+              "RelativeDocumentMoniker": "dekodowanie\\konwersje.h",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\konwersje.h",
+              "RelativeToolTip": "dekodowanie\\konwersje.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-13T19:23:13.948Z",
+              "WhenOpened": "2025-05-16T22:42:57.159Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "lancuchy.c",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\lancuchy.c",
-              "RelativeDocumentMoniker": "dekodowanie\\lancuchy.c",
-              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\lancuchy.c",
-              "RelativeToolTip": "dekodowanie\\lancuchy.c",
-              "ViewState": "AgIAACgAAAAAAAAAAAAqwDQAAAAAAAAAAAAAAA==",
+              "Title": "konwersje.c",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\konwersje.c",
+              "RelativeDocumentMoniker": "dekodowanie\\konwersje.c",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\konwersje.c",
+              "RelativeToolTip": "dekodowanie\\konwersje.c",
+              "ViewState": "AgIAADEAAAAAAAAAAAAkwEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-05-13T19:17:34.45Z",
+              "WhenOpened": "2025-05-16T22:42:01.424Z",
               "EditorCaption": ""
             },
             {
@@ -56,11 +64,37 @@
               "Title": "dekodowane.c",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\dekodowane.c",
               "RelativeDocumentMoniker": "dekodowanie\\dekodowane.c",
-              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\dekodowane.c",
-              "RelativeToolTip": "dekodowanie\\dekodowane.c",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADAAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\dekodowane.c*",
+              "RelativeToolTip": "dekodowanie\\dekodowane.c*",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAAAJoAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-05-11T16:05:51.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "lancuchy.h",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\lancuchy.h",
+              "RelativeDocumentMoniker": "dekodowanie\\lancuchy.h",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\lancuchy.h",
+              "RelativeToolTip": "dekodowanie\\lancuchy.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-13T19:23:13.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "lancuchy.c",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\lancuchy.c",
+              "RelativeDocumentMoniker": "dekodowanie\\lancuchy.c",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\dekodowanie\\dekodowanie\\lancuchy.c",
+              "RelativeToolTip": "dekodowanie\\lancuchy.c",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAkwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-05-13T19:17:34.45Z",
               "EditorCaption": ""
             }
           ]

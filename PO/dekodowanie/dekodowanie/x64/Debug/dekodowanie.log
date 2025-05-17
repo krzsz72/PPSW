@@ -4,17 +4,10 @@ C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\lancuchy.h(3,9
       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime.h(230,17):
       see previous definition of 'NULL'
   
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\dekodowane.c(7,47): warning C4091: 'typedef ': ignored on left of 'TokenType' when no variable is declared
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\dekodowane.c(8,41): warning C4091: 'typedef ': ignored on left of 'KeywordCode' when no variable is declared
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\dekodowane.c(14,2): warning C4091: 'typedef ': ignored on left of 'TokenValue' when no variable is declared
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\dekodowane.c(19,2): warning C4091: 'typedef ': ignored on left of 'Token' when no variable is declared
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\dekodowane.c(30,2): warning C4091: 'typedef ': ignored on left of 'Keyword' when no variable is declared
-  lancuchy.c
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\lancuchy.c(2,9): warning C4005: 'NULL': macro redefinition
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime.h(230,17):
-      see previous definition of 'NULL'
-  
-  Generating Code...
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\dekodowane.c(69,1): warning C4716: 'eStringToKeyword': must return a value
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\dekodowane.c(59,1): warning C4716: 'ucFindTokensInString': must return a value
+C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\dekodowane.c(8,47): warning C4091: 'typedef ': ignored on left of 'TokenType' when no variable is declared
+C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\dekodowane.c(9,41): warning C4091: 'typedef ': ignored on left of 'KeywordCode' when no variable is declared
+C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\dekodowane.c(15,2): warning C4091: 'typedef ': ignored on left of 'TokenValue' when no variable is declared
+C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\dekodowane.c(20,2): warning C4091: 'typedef ': ignored on left of 'Token' when no variable is declared
+C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\dekodowane.c(32,2): warning C4091: 'typedef ': ignored on left of 'Keyword' when no variable is declared
+C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\dekodowanie\dekodowane.c(54,27): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
   dekodowanie.vcxproj -> C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\dekodowanie\x64\Debug\dekodowanie.exe

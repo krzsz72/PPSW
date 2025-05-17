@@ -152,7 +152,7 @@ void DecodeMsg(char *pcString) {
 
 char litera;
 int main() {
-	char teststring[] = "load 0x20 immediately";
+	char teststring[] = "load 0x20 immediately reset 0x00";
 	DecodeMsg(teststring);
 
 
