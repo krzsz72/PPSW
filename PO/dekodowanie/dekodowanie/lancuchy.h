@@ -6,13 +6,6 @@
 
 void CopyString(char pcSource[], char pcDestination[]);
 
-/*//------^^^^^^^^^^^^^ Copy string alt
-/*do
-   {
-       pcDestination[i] = pcSource[i];
-       i++;
-   } while (pcSource[i]!='\0');*/
-
 
 enum CompResult {
     DIFFERENT,

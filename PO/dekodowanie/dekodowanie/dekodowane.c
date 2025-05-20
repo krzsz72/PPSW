@@ -3,8 +3,6 @@
 #define NULL '\0'
 
 
-
-
 typedef enum TokenType {KEYWORD,NUMBER,STRING};
 typedef enum KeywordCode { LD, ST, RST };
 
@@ -86,7 +84,7 @@ unsigned char ucFindTokensInString(char* pcString) {
 };
 
 
-//enum Result {OK,ERROR};
+//enum Result {OK,ERROR}; z modulu konwersje
 enum Result eStringToKeyword(char pcStr[], enum KeywordCode *peKeywordCode) {
 	
 	for (unsigned char ucKeywordCount = 0; ucKeywordCount < MAX_KEYWORD_NR; ucKeywordCount++)
@@ -101,35 +99,32 @@ enum Result eStringToKeyword(char pcStr[], enum KeywordCode *peKeywordCode) {
 };
 
 
-//enum KeywordCode kod;
-
 void DecodeTokens(void) {
-	
 	//dostaje ponullowane tokeny i je nazywa
-	enum KeywordCode kod;
-	unsigned int liczba = 0;
-	struct Token *currToken;
+	enum KeywordCode eTokenCode;
+	unsigned int uiTokenNumber = 0;
+	struct Token *psCurrentToken;
 
-	for (int i = 0; i < ucTokenNr; i++)
+	for (unsigned char ucTokenCounter = 0; ucTokenCounter < ucTokenNr; ucTokenCounter++)
 	{
-		currToken = &asToken[i];
-		//printf("\ntoken: %x\n",currToken);
-		if (eStringToKeyword(currToken->uValue.pcString, &kod) == OK)
+		psCurrentToken = &asToken[ucTokenCounter];
+		//printf("\ntoken: %x\n",psCurrentToken);
+		if (eStringToKeyword(psCurrentToken->uValue.pcString, &eTokenCode) == OK)
 		{
-			currToken->eType = KEYWORD;
-			currToken->uValue.eKeyword = kod;
+			psCurrentToken->eType = KEYWORD;
+			psCurrentToken->uValue.eKeyword = eTokenCode;
 
-			//printf("\nkod : %i\n", kod);
+			//printf("\neTokenCode : %i\n", eTokenCode);
 		}
-		else if (eHexStringToUInt(currToken->uValue.pcString, &liczba) == OK)
+		else if (eHexStringToUInt(psCurrentToken->uValue.pcString, &uiTokenNumber) == OK)
 		{
-			currToken->eType = NUMBER;
-			currToken->uValue.uiNumber = liczba;
-			printf("liczba %i",liczba);
+			psCurrentToken->eType = NUMBER;
+			psCurrentToken->uValue.uiNumber = uiTokenNumber;
+			//printf("uiTokenNumber %i",uiTokenNumber);
 		}
 		else
 		{
-			currToken->eType = STRING;
+			psCurrentToken->eType = STRING;
 		}
 	}
 };
@@ -138,9 +133,6 @@ void DecodeTokens(void) {
 void DecodeMsg(char *pcString) {
 
 	ucFindTokensInString(pcString);
-
-	printf("\ntoken nr: %i\n", ucTokenNr);
-
 	ReplaceCharactersInString(pcString,' ',NULL);
 	DecodeTokens();
 	//printf("string wej : %s", pcString);
@@ -150,9 +142,9 @@ void DecodeMsg(char *pcString) {
 
 
 
-char litera;
+//char litera;
 int main() {
-	char teststring[] = "load 0x20 immediately reset 0x00";
+	char teststring[] = "load 0x20 immediately";
 	DecodeMsg(teststring);
 
 
