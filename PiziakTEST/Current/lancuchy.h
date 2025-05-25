@@ -1,9 +1,11 @@
-#include <LPC21xx.H>
-#include <stdio.h>
 
-//#define NULL '\0';
+void CopyString(char pcSource[], char pcDestination[]) ;
+enum CompResult {
+    DIFFERENT,
+    EQUAL
+};
 
-void lancuchy1(){
-	IO1DIR = 0x1;
-	IO1SET = 0x1;
-}
+enum CompResult eCompareString(char pcStr1[], char pcStr2[]) ;
+
+void AppendString(char pcSourceStr[], char pcDestinationStr[]) ;
+void ReplaceCharactersInString(char pcString[],char cOldChar, char cNewChar) ;

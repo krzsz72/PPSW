@@ -397,26 +397,6 @@
               <FileType>2</FileType>
               <FilePath>.\Startup.s</FilePath>
             </File>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>4_1.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\4_GPIO\4_1.c</FilePath>
-            </File>
-            <File>
-              <FileName>3_1.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\3_Rej\3_1.c</FilePath>
-            </File>
-            <File>
-              <FileName>lancuchy.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lancuchy.h</FilePath>
-            </File>
           </Files>
         </Group>
       </Groups>
