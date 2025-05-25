@@ -3,44 +3,68 @@
 #include "dekodowanie.h"
 #include "stdio.h"
 
-
-//void TestOf_() {};
+//
+//void TestOf_() {
+//	//zmienne
+//
+//	printf("\n\n");
+//
+//	printf("Test 1 - ");
+//	//
+//
+//	if (true) printf("OK\n") else printf("ERROR\n");
+//};
 
 //-----------------
 //	TESTY LANCUCHOW
 //-----------------
+void TestOf_CopyString() {
+	unsigned char str1[] = "ul";
+	unsigned char str2[254];
+
+	printf("CopyString\n\n");
+
+	printf("Test 1 - ");
+	//niepusty str1<str2
+
+	if (str2)	printf("OK\n");	else printf("ERROR\n");
+
+
+};
 void TestOf_eCompareString() {
-	
-	printf("\n\tTest1 - Identyczne stringi\n");
-	    char str1[] = "Ala ma kota";
-	    char str2[] = "Ala ma kota";
-	
-	    printf("\neCompare: String1 - %s , String2 - %s\n", str1, str2);
-		if (eCompareString(str1,str2)==EQUAL)
+	printf("eCompareString\n\n");
+	char ucTest1Str1[] = "Ala ma kota";
+	char ucTest1Str2[] = "Ala ma kota";
+	char ucTest2Str1[] = "Ala ma k\0ota";
+
+
+	printf("Test1 - ");
+	//dwa idemtyczne string
+	   // printf("\neCompare: String1 - %s , String2 - %s\n", ucTest1Str1, ucTest1Str2);
+		if (eCompareString(ucTest1Str1,ucTest1Str2)==EQUAL)
 		{
-			printf("\nEQUAL\n");
+			printf("OK\n");
 		}
 		else {
-			printf("\nDIFFERRENT\n");
+			printf("ERROR\n");
 		}
 
-	printf("\n\tTest2 - Rozne stringi\n");
-		char str3[] = "Ala ma kota";
-		char str4[] = "Ala ma k\0ota";
+	printf("Test2 - ");
+	//dwa rozne stringi, jeden dodatkowo przedwczesnie zakonczony NULLEM
 
-		printf("\neCompare: String1 - %s , String2 - %s\n", str3, str4);
-		if (eCompareString(str3, str4) == EQUAL)
+		//printf("\neCompare: String1 - %s , String2 - %s\n", ucTest1Str1, ucTest2Str1);
+		if (eCompareString(ucTest1Str1, ucTest2Str1) == DIFFERENT)
 		{
-			printf("\nEQUAL\n");
+			printf("OK\n");
 		}
 		else {
-			printf("\nDIFFERRENT\n");
+			printf("ERROR\n");
 		}
 
 	//printf("\n\tTest3 - NULL na pocz¹tku\n");
 	//	char str5[] = "\0";
 	//	char str6[] = "Ala ma kota";
-
+	//
 	//	printf("\neCompare: String1 - %s , String2 - %s\n", str5, str6);
 	//	if (eCompareString(str5, str6) == EQUAL)
 	//	{
@@ -49,7 +73,7 @@ void TestOf_eCompareString() {
 	//	else {
 	//		printf("\nDIFFERRENT\n");
 	//	}
-		//vs commit
+	
 
 }
 
@@ -60,8 +84,11 @@ void TestOf_eCompareString() {
 
 
 void main() {
-	printf("\n*********** TEST eCompareString ***********\n");
+	printf("\n*********** TESTY LANCUCHOW ***********\n");
+	TestOf_CopyString();
+
 	TestOf_eCompareString();
+	
 
 	return 0;
 };

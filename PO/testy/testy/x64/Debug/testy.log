@@ -1,33 +1,8 @@
-﻿  dekodowanie.c
-  konwersje.c
-  lancuchy.c
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\lancuchy.h(3,9): warning C4005: 'NULL': macro redefinition
-  (compiling source file '../dekodowanie.c')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime.h(230,17):
-      see previous definition of 'NULL'
-  
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\dekodowanie.c(6,51): warning C4091: 'typedef ': ignored on left of 'TokenType' when no variable is declared
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\dekodowanie.c(7,41): warning C4091: 'typedef ': ignored on left of 'KeywordCode' when no variable is declared
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\dekodowanie.c(13,2): warning C4091: 'typedef ': ignored on left of 'TokenValue' when no variable is declared
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\dekodowanie.c(18,2): warning C4091: 'typedef ': ignored on left of 'Token' when no variable is declared
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\dekodowanie.c(30,2): warning C4091: 'typedef ': ignored on left of 'Keyword' when no variable is declared
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\dekodowanie.c(52,29): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\konwersje.h(3,9): warning C4005: 'NULL': macro redefinition
-  (compiling source file '../konwersje.c')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime.h(230,17):
-      see previous definition of 'NULL'
-  
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\lancuchy.h(3,9): warning C4005: 'NULL': macro redefinition
-  (compiling source file '../lancuchy.c')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime.h(230,17):
-      see previous definition of 'NULL'
-  
-  main.c
+﻿  main.c
 C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\lancuchy.h(3,9): warning C4005: 'NULL': macro redefinition
   (compiling source file '../main.c')
       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime.h(230,17):
       see previous definition of 'NULL'
   
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\main.c(66,2): warning C4098: 'main': 'void' function returning a value
-  Generating Code...
+C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\main.c(93,2): warning C4098: 'main': 'void' function returning a value
   testy.vcxproj -> C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\x64\Debug\testy.exe
