@@ -397,6 +397,21 @@
               <FileType>2</FileType>
               <FilePath>.\Startup.s</FilePath>
             </File>
+            <File>
+              <FileName>dekodowanie.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\dekodowanie.c</FilePath>
+            </File>
+            <File>
+              <FileName>konwersje.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\konwersje.c</FilePath>
+            </File>
+            <File>
+              <FileName>lancuchy.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lancuchy.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
