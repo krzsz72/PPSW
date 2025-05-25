@@ -75,5 +75,5 @@
 *.iex
 
 *.bak
-
-/PO/testy/.vs/testy/FileContentIndex/f95aeb63-5227-489d-b2a5-820df56b3790.vsidx
+# Visual Studio Code
+*.vsidx
