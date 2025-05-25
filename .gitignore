@@ -77,3 +77,4 @@
 *.bak
 # Visual Studio Code
 *.vsidx
+*.VC.opendb
