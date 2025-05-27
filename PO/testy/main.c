@@ -12,7 +12,7 @@
 //	printf("Test 1 - ");
 //	//
 //
-//	if (true) printf("OK\n") else printf("ERROR\n");
+//	if (true) printf("OK\n"); else printf("ERROR\n");
 //};
 
 //-----------------
@@ -26,8 +26,7 @@ void TestOf_CopyString() {
 
 	printf("Test 1 - ");
 	//niepusty str1<str2
-
-	if (str2)	printf("OK\n");	else printf("ERROR\n");
+	if (str2) printf("OK\n"); else printf("ERROR\n");
 
 
 };
