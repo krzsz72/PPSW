@@ -2,17 +2,18 @@
 #include "konwersje.h"
 #include "dekodowanie.h"
 #include "stdio.h"
+#define NULL '\0'
 
 //
 //void TestOf_() {
 //	//zmienne
 //
-//	printf("\n\n");
+//	printf("\n\n\n");
 //
 //	printf("Test 1 - ");
 //	//
 //
-//	if (true) printf("OK\n"); else printf("ERROR\n");
+//	if (eCompareString(str1,str3) == EQUAL) printf("OK\n"); else printf("ERROR\n");
 //};
 
 //-----------------
@@ -21,21 +22,34 @@
 void TestOf_CopyString() {
 	unsigned char str1[] = "ul";
 	unsigned char str2[254];
+	unsigned char str3[] = "test";
+	unsigned char str4[]="\0";
 
-	printf("CopyString\n\n");
+	printf("\nCopyString\n\n");
 
 	printf("Test 1 - ");
-	//niepusty str1<str2
-	if (str2) printf("OK\n"); else printf("ERROR\n");
+	//przewidziane uzycie
+	CopyString(str1, str2);
+	if (eCompareString(str1,str2) == EQUAL) printf("OK\n"); else printf("ERROR\n");
 
+	printf("Test 2 - ");
+	//nadpisywanie stringa docelowego przez krotszy zrodlowy
+	CopyString(str1, str3);
+	if (eCompareString(str1,str3) == EQUAL) printf("OK\n"); else printf("ERROR\n");
+	
+	printf("Test 3 - ");
+	//string zrodlowy rowny null
+	CopyString(str4, str3);
+	if (eCompareString(str4, str3) == EQUAL) printf("OK\n"); else printf("ERROR\n");
 
 };
+
 void TestOf_eCompareString() {
-	printf("eCompareString\n\n");
 	char ucTest1Str1[] = "Ala ma kota";
 	char ucTest1Str2[] = "Ala ma kota";
 	char ucTest2Str1[] = "Ala ma k\0ota";
 
+	printf("\neCompareString\n\n");
 
 	printf("Test1 - ");
 	//dwa idemtyczne string
@@ -85,7 +99,6 @@ void TestOf_eCompareString() {
 void main() {
 	printf("\n*********** TESTY LANCUCHOW ***********\n");
 	TestOf_CopyString();
-
 	TestOf_eCompareString();
 	
 
