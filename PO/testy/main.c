@@ -89,7 +89,6 @@ void TestOf_eCompareString() {
 	
 }
 
-
 void TestOf_AppendString() {
 	char cSourceString[] = "test1";
 	char cDestString[254]="";
@@ -118,8 +117,33 @@ void TestOf_AppendString() {
 	//if (eCompareString(cEmptyString, cSourceString) == EQUAL) printf("OK\n"); else printf("ERROR\n");
 };
 
+void TestOf_ReplaceCharatersInString() {
+	char str1[] = "Ala ma 99 kotów!";
+	char str2[] = "Ala ma 99 kotów!";
+
+	printf("\nReplaceCharatersInString\n\n");
+
+	printf("Test 1 - ");
+	//zamiana znaku a na x
+	ReplaceCharactersInString(str1, 'a', 'x');
+	if (eCompareString(str1,"Alx mx 99 kotów!") == EQUAL) printf("OK\n"); else printf("ERROR\n");
+
+	printf("Test 2 - ");
+	//zamiana znaku a na NULL
+	ReplaceCharactersInString(str2, 'a', NULL);
+	if (eCompareString(str2, "Al") == EQUAL) printf("OK\n"); else printf("ERROR\n");
+
+};
+
+//-----------------
+//	TESTY KONWERSJI
+//-----------------
 
 
+
+//-----------------
+//	TESTY DEKODOWANIA
+//-----------------
 
 
 
@@ -128,6 +152,12 @@ void main() {
 	TestOf_CopyString();
 	TestOf_eCompareString();
 	TestOf_AppendString();
+	TestOf_ReplaceCharatersInString();
+
+	printf("\n*********** TESTY KONWERSJI ***********\n");
+
+
+	printf("\n*********** TESTY DEKODOWANIA ***********\n");
 
 	return 0;
 };

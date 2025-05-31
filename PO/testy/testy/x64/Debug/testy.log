@@ -4,5 +4,5 @@ C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\lancuchy.h(3,9): warning C4005: 
       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime.h(230,17):
       see previous definition of 'NULL'
   
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\main.c(132,2): warning C4098: 'main': 'void' function returning a value
+C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\main.c(156,2): warning C4098: 'main': 'void' function returning a value
   testy.vcxproj -> C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\x64\Debug\testy.exe
