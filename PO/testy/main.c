@@ -20,10 +20,10 @@
 //	TESTY LANCUCHOW
 //-----------------
 void TestOf_CopyString() {
-	unsigned char str1[] = "ul";
-	unsigned char str2[254];
-	unsigned char str3[] = "test";
-	unsigned char str4[]="\0";
+	char str1[] = "ul";
+	char str2[254];
+	char str3[] = "test";
+	char str4[]="\0";
 
 	printf("\nCopyString\n\n");
 
@@ -45,16 +45,16 @@ void TestOf_CopyString() {
 };
 
 void TestOf_eCompareString() {
-	char ucTest1Str1[] = "Ala ma kota";
-	char ucTest1Str2[] = "Ala ma kota";
-	char ucTest2Str1[] = "Ala ma k\0ota";
+	char cTest1Str1[] = "Ala ma kota";
+	char cTest1Str2[] = "Ala ma kota";
+	char cTest2Str1[] = "Ala ma k\0ota";
 
 	printf("\neCompareString\n\n");
 
 	printf("Test1 - ");
 	//dwa idemtyczne string
 	   // printf("\neCompare: String1 - %s , String2 - %s\n", ucTest1Str1, ucTest1Str2);
-		if (eCompareString(ucTest1Str1,ucTest1Str2)==EQUAL)
+		if (eCompareString(cTest1Str1,cTest1Str2)==EQUAL)
 		{
 			printf("OK\n");
 		}
@@ -66,7 +66,7 @@ void TestOf_eCompareString() {
 	//dwa rozne stringi, jeden dodatkowo przedwczesnie zakonczony NULLEM
 
 		//printf("\neCompare: String1 - %s , String2 - %s\n", ucTest1Str1, ucTest2Str1);
-		if (eCompareString(ucTest1Str1, ucTest2Str1) == DIFFERENT)
+		if (eCompareString(cTest1Str1, cTest2Str1) == DIFFERENT)
 		{
 			printf("OK\n");
 		}
@@ -87,9 +87,36 @@ void TestOf_eCompareString() {
 	//		printf("\nDIFFERRENT\n");
 	//	}
 	
-
 }
 
+
+void TestOf_AppendString() {
+	char cSourceString[] = "test1";
+	char cDestString[254]="";
+	char cEmptyString[] = "";
+
+	printf("\nAppendString\n\n");
+
+	printf("Test 1 - ");
+	//dopisanie do pustego stringa
+	AppendString(cSourceString, cDestString);
+	if (eCompareString(cDestString, cSourceString) == EQUAL) printf("OK\n"); else printf("ERROR\n");
+
+	printf("Test 2 - ");
+	//dopisanie do niepustego stringa
+	AppendString(cSourceString, cDestString);
+	if (eCompareString(cDestString, "test1test1") == EQUAL) printf("OK\n"); else printf("ERROR\n");
+
+	printf("Test 3 - ");
+	//dopisanie pustego stringa
+	AppendString(cEmptyString, cSourceString);
+	if (eCompareString(cSourceString, cSourceString) == EQUAL) printf("OK\n"); else printf("ERROR\n");
+
+	//printf("Test 4 - ");
+	////dopisanie do mniejszego stringa
+	//AppendString(cSourceString, cEmptyString);
+	//if (eCompareString(cEmptyString, cSourceString) == EQUAL) printf("OK\n"); else printf("ERROR\n");
+};
 
 
 
@@ -100,7 +127,7 @@ void main() {
 	printf("\n*********** TESTY LANCUCHOW ***********\n");
 	TestOf_CopyString();
 	TestOf_eCompareString();
-	
+	TestOf_AppendString();
 
 	return 0;
 };
