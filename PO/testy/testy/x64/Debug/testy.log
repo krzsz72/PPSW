@@ -19,5 +19,5 @@ C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\dekodowanie.h(19,2): warning C40
 C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\dekodowanie.h(31,2): warning C4091: 'typedef ': ignored on left of 'Keyword' when no variable is declared
   (compiling source file '../main.c')
   
-C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\main.c(336,2): warning C4098: 'main': 'void' function returning a value
+C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\main.c(361,2): warning C4098: 'main': 'void' function returning a value
   testy.vcxproj -> C:\Users\LENOVO\Documents\PPSW\PO\PPSW\PO\testy\x64\Debug\testy.exe
