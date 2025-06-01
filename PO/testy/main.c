@@ -139,6 +139,73 @@ void TestOf_ReplaceCharatersInString() {
 //	TESTY KONWERSJI
 //-----------------
 
+void TestOf_UIntToHexStr() {
+	unsigned int uint = 0xFDE8;
+	char str1[254];
+	unsigned int num0= 0;
+	char str2[] = "test string";
+
+	printf("\nUIntToHexStr\n\n");
+
+	printf("Test 1 - ");
+	//zamiana liczby 65000 na hex
+	UIntToHexStr(uint, str1);
+	if (eCompareString(str1, "0xFDE8") == EQUAL) printf("OK\n"); else printf("ERROR\n");
+	
+	printf("Test 2 - ");
+	//nadpisanie niepustego stringa
+	UIntToHexStr(num0, str2);
+	if (eCompareString(str2, "0x0000") == EQUAL) printf("OK\n"); else printf("ERROR\n");
+};
+
+
+void TestOf_eHexStringToUInt() {
+	unsigned int uint1 = 0;
+	char str1[] = "0xFDE8";
+	unsigned int uint2 = 0xFFFFFF;
+	char errStr2[] = "0x";
+
+	printf("\neHexStringToUInt\n\n");
+
+	printf("Test 1 - ");
+	//zamiana str1 i wpisanie w uint1
+	eHexStringToUInt(str1, &uint1);
+	if (uint1 == 0xFDE8) printf("OK\n"); else printf("ERROR\n");
+
+	printf("Test 2 - ");
+	//niepusty docelowy int
+	eHexStringToUInt(str1, &uint2);
+	if (uint2 == 0xFDE8) printf("OK\n"); else printf("ERROR\n");
+
+	printf("Test 3 - ");
+	//nieprawdilowy format string
+	if (eHexStringToUInt(errStr2, &uint1)==ERROR) printf("OK\n"); else printf("ERROR\n");
+};
+
+
+void TestOf_AppendUIntToString() {
+	unsigned int uint1 = 0xFDE8;
+	char str1[254] = "";
+	unsigned int num0 = 0;
+
+	printf("\nAppendUIntToString\n\n");
+
+	printf("Test 1 - ");
+	//dopisanie do pustego stringa
+	AppendUIntToString(uint1,str1);
+	if (eCompareString("0xFDE8", str1) == EQUAL) printf("OK\n"); else printf("ERROR\n");
+
+	printf("Test 2 - ");
+	//dopisanie do niepustego stringa
+	AppendUIntToString(uint1, str1);
+	if (eCompareString("0xFDE80xFDE8", str1) == EQUAL) printf("OK\n"); else printf("ERROR\n");
+
+	printf("Test 3 - ");
+	//dopisanie 0 do stringa
+	AppendUIntToString(num0, str1);
+	if (eCompareString("0xFDE80xFDE80x0000", str1) == EQUAL) printf("OK\n"); else printf("ERROR\n");
+};
+
 
 
 //-----------------
@@ -155,7 +222,9 @@ void main() {
 	TestOf_ReplaceCharatersInString();
 
 	printf("\n*********** TESTY KONWERSJI ***********\n");
-
+	TestOf_UIntToHexStr();
+	TestOf_eHexStringToUInt();
+	TestOf_AppendUIntToString();
 
 	printf("\n*********** TESTY DEKODOWANIA ***********\n");
 

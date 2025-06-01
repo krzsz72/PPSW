@@ -11,6 +11,14 @@
       "RelativeMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|solutionrelative:lancuchy.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\konwersje.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|solutionrelative:konwersje.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\konwersje.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|solutionrelative:konwersje.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\lancuchy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|solutionrelative:lancuchy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -22,8 +30,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "konwersje.c",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\konwersje.c",
+              "RelativeDocumentMoniker": "konwersje.c",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\konwersje.c",
+              "RelativeToolTip": "konwersje.c",
+              "ViewState": "AgIAAEoAAAAAAAAAAADwv1MAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-05-31T23:37:29.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "konwersje.h",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\konwersje.h",
+              "RelativeDocumentMoniker": "konwersje.h",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\konwersje.h",
+              "RelativeToolTip": "konwersje.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-01T01:30:45.125Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -39,7 +73,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "lancuchy.h",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\lancuchy.h",
               "RelativeDocumentMoniker": "lancuchy.h",
@@ -55,9 +89,9 @@
               "Title": "main.c",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\main.c",
               "RelativeDocumentMoniker": "main.c",
-              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\main.c",
-              "RelativeToolTip": "main.c",
-              "ViewState": "AgIAAHYAAAAAAAAAAADwv5kAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\main.c*",
+              "RelativeToolTip": "main.c*",
+              "ViewState": "AgIAALcAAAAAAAAAAADwv80AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-05-25T19:22:27.87Z",
               "EditorCaption": ""
