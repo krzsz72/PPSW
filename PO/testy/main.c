@@ -4,17 +4,6 @@
 #include "stdio.h"
 #define NULL '\0'
 
-//
-//void TestOf_() {
-//	//zmienne
-//
-//	printf("\n\n\n");
-//
-//	printf("Test 1 - ");
-//	//
-//
-//	if (eCompareString(str1,str3) == EQUAL) printf("OK\n"); else printf("ERROR\n");
-//};
 
 //-----------------
 //	TESTY LANCUCHOW
@@ -207,12 +196,144 @@ void TestOf_AppendUIntToString() {
 };
 
 
-
 //-----------------
 //	TESTY DEKODOWANIA
 //-----------------
 
+void TestOf_ucFindTokensInString() {
+	char str1[] = "";
+	char str2[] = "   load reset";
+	char str3[] = "load    reset";
+	char str4[] = "load 0x20 immediately reset";
 
+	printf("\nucFindTokensInString\n\n");
+
+	printf("Test 1 - ");
+	//pusty komunikat
+	ucTokenNr = 0;
+	ucFindTokensInString(str1);
+	if (ucTokenNr == 0) printf("OK\n"); else printf("ERROR\n");
+	
+	printf("Test 2 - ");
+	//komunikat rozpoczynajacy sie delimami
+	ucTokenNr = 0;
+	ucFindTokensInString(str2);
+	if (ucTokenNr == 2
+		&& eCompareString("load reset", asToken[0].uValue.pcString) == EQUAL
+		&& eCompareString("reset", asToken[1].uValue.pcString) == EQUAL
+		) printf("OK\n"); else printf("ERROR\n");
+
+	printf("Test 3 - ");
+	//komunikat rozdzielony kilkoma delimami
+	ucTokenNr = 0;
+	ucFindTokensInString(str3);
+	if (ucTokenNr == 2
+		&& eCompareString("load    reset", asToken[0].uValue.pcString) == EQUAL
+		&& eCompareString("reset", asToken[1].uValue.pcString) == EQUAL
+		) printf("OK\n"); else printf("ERROR\n");
+
+	printf("Test 4 - ");
+	//komunikat o czterech tokenach
+	ucTokenNr = 0;
+	ucFindTokensInString(str4);
+	if (ucTokenNr == 4
+		&& eCompareString("load 0x20 immediately reset", asToken[0].uValue.pcString) == EQUAL
+		&& eCompareString("0x20 immediately reset", asToken[1].uValue.pcString) == EQUAL
+		&& eCompareString("immediately reset", asToken[2].uValue.pcString) == EQUAL
+		) printf("OK\n"); else printf("ERROR\n");
+
+};
+
+void TestOf_eStringToKeyword() {
+	char str1[] = "load";
+	char str2[] = "test";
+	char str3[] = "";
+	enum KeywordCode kod;
+
+	printf("\neStringToKeyword\n\n");
+
+	printf("Test 1 - ");
+	//poprawne odnalezienie keyworda
+	if (eStringToKeyword(str1,&kod) == OK
+		&& kod==LD
+		) printf("OK\n"); else printf("ERROR\n");
+
+	printf("Test 2 - ");
+	//niepoprawny keyword
+	if (eStringToKeyword(str2, &kod) == ERROR) printf("OK\n"); else printf("ERROR\n");
+
+	printf("Test 3 - ");
+	//pusty string
+	if (eStringToKeyword(str3, &kod) == ERROR) printf("OK\n"); else printf("ERROR\n");
+};
+
+
+void TestOf_DecodeTokens() {
+	asToken[0].uValue.pcString = "load";
+	asToken[1].uValue.pcString = "0x20";
+	asToken[2].uValue.pcString = "immediately";
+	ucTokenNr = 3;
+
+	printf("\nDecodeTokens\n\n");
+	
+	printf("Test 1 - ");
+	//keyword
+	DecodeTokens();
+	if (asToken[0].eType == KEYWORD) printf("OK\n"); else printf("ERROR\n");
+
+	printf("Test 2 - ");
+	//number
+	if (asToken[1].eType == NUMBER) printf("OK\n"); else printf("ERROR\n");
+
+	printf("Test 3 - ");
+	//ani keyword ani number
+	if (asToken[2].eType == STRING) printf("OK\n"); else printf("ERROR\n");
+
+	printf("Test 4 - ");
+	//null
+	asToken[0].uValue.pcString = "";
+	asToken[1].uValue.pcString = "";
+	asToken[2].uValue.pcString = "";
+	ucTokenNr = 3;
+	DecodeTokens();
+	if (asToken[0].eType == STRING
+		&& asToken[1].eType == STRING
+		&& asToken[2].eType == STRING
+		) printf("OK\n"); else printf("ERROR\n");
+
+};
+
+
+void TestOf_DecodeMsg() {
+	char str1[] = "load 0x20 immediately";
+
+	printf("\nDecodeMsg\n\n");
+
+	printf("Test 1 - ");
+	//poprawny typ komunikatu
+	DecodeMsg(str1);
+	if (asToken[0].eType==KEYWORD && asToken[0].uValue.eKeyword ==LD
+		&& asToken[1].eType == NUMBER && asToken[1].uValue.uiNumber == 0x20
+		&& asToken[2].eType == STRING && eCompareString(asToken[2].uValue.pcString, "immediately")
+		
+		
+		
+		
+		) printf("OK\n"); else printf("ERROR\n");
+};
+
+
+//
+//void TestOf_() {
+//	//zmienne
+//
+//	printf("\n\n\n");
+//
+//	printf("Test 1 - ");
+//	//
+//
+//	if (eCompareString(str1,str3) == EQUAL) printf("OK\n"); else printf("ERROR\n");
+//};
 
 void main() {
 	printf("\n*********** TESTY LANCUCHOW ***********\n");
@@ -227,6 +348,10 @@ void main() {
 	TestOf_AppendUIntToString();
 
 	printf("\n*********** TESTY DEKODOWANIA ***********\n");
+	TestOf_ucFindTokensInString();
+	TestOf_eStringToKeyword();
+	TestOf_DecodeTokens();
+	TestOf_DecodeMsg();
 
 	return 0;
 };

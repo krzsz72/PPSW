@@ -7,12 +7,20 @@
       "RelativeMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|solutionrelative:main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\konwersje.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|solutionrelative:konwersje.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\dekodowanie.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|solutionrelative:dekodowanie.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\lancuchy.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|solutionrelative:lancuchy.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\konwersje.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|solutionrelative:konwersje.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\dekodowanie.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|solutionrelative:dekodowanie.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F14E6C3D-A290-4D81-A0B7-69D07A34F743}|testy\\testy.vcxproj|C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\konwersje.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -30,24 +38,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "dekodowanie.c",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\dekodowanie.c",
+              "RelativeDocumentMoniker": "dekodowanie.c",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\dekodowanie.c",
+              "RelativeToolTip": "dekodowanie.c",
+              "ViewState": "AgIAAF0AAAAAAAAAAADwv2gAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-06-01T18:40:43.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dekodowanie.h",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\dekodowanie.h",
+              "RelativeDocumentMoniker": "dekodowanie.h",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\dekodowanie.h",
+              "RelativeToolTip": "dekodowanie.h",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACAAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-01T18:36:56.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "konwersje.c",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\konwersje.c",
               "RelativeDocumentMoniker": "konwersje.c",
               "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\konwersje.c",
               "RelativeToolTip": "konwersje.c",
-              "ViewState": "AgIAAEoAAAAAAAAAAADwv04AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAADwv0MAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-05-31T23:37:29.809Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "konwersje.h",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\konwersje.h",
               "RelativeDocumentMoniker": "konwersje.h",
@@ -66,14 +100,14 @@
               "RelativeDocumentMoniker": "lancuchy.c",
               "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\lancuchy.c",
               "RelativeToolTip": "lancuchy.c",
-              "ViewState": "AgIAABAAAAAAAAAAAADwvxkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAADwvxwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-05-25T20:03:37.968Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "lancuchy.h",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\lancuchy.h",
               "RelativeDocumentMoniker": "lancuchy.h",
@@ -89,9 +123,9 @@
               "Title": "main.c",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\main.c",
               "RelativeDocumentMoniker": "main.c",
-              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\main.c",
-              "RelativeToolTip": "main.c",
-              "ViewState": "AgIAAN8AAAAAAAAAAADwv+cAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PPSW\\PO\\PPSW\\PO\\testy\\main.c*",
+              "RelativeToolTip": "main.c*",
+              "ViewState": "AgIAACEBAAAAAAAAAADwvywBAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-05-25T19:22:27.87Z",
               "EditorCaption": ""

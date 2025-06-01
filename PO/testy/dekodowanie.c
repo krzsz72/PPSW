@@ -89,7 +89,7 @@ enum Result eStringToKeyword(char pcStr[], enum KeywordCode* peKeywordCode) {
 
 	for (unsigned char ucKeywordCount = 0; ucKeywordCount < MAX_KEYWORD_NR; ucKeywordCount++)
 	{
-		if (eCompareString(pcStr, asKeywordList[ucKeywordCount].cString) == EQUAL)
+		if (eCompareString(asKeywordList[ucKeywordCount].cString, pcStr) == EQUAL)
 		{
 			*peKeywordCode = asKeywordList[ucKeywordCount].eCode;
 			return OK;

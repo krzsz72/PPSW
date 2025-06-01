@@ -34,6 +34,7 @@ void TestOfUIntToHexStr() {
 //enum Result { OK, ERROR };
 enum Result eHexStringToUInt(char pcStr[], unsigned int* puiValue) {
 	unsigned char ucNibbleCounter = 0;
+	*puiValue = 0;
 	if ((pcStr[0] == '0') && (pcStr[1] == 'x') && (pcStr[2] != NULL))
 	{
 		for (ucNibbleCounter = 0; ucNibbleCounter <= 4; ucNibbleCounter++)
