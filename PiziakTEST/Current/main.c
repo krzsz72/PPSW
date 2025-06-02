@@ -1,11 +1,12 @@
 #include <LPC21xx.H>
 #include "led.h"
 #include "keyboard.h"
+#include "timer.h"
 
 #define NULL '\0'
 
-//zadanie: 6.7
-//data: 07.05.2025
+//zadanie: 7.1
+//data: 02.06.2025
 
 
 int debugVar;
@@ -29,97 +30,12 @@ void Delay(unsigned long ulMili){
 	
 	unsigned int uiStepCounter=0;
 	
-int main(){
+
+	int main(){
 	LedInit();	
 	KeyboardInit();
-	while(1){
-		switch(eLedState){
-				case STOP:
-						if(eKeyboardRead()==BUTTON_0){
-						eLedState=STEP_LEFT;
-						}
-						if(eKeyboardRead()==BUTTON_2){
-						eLedState=STEP_RIGHT;
-						}				
-				break;
-				
-				case STEP_RIGHT:
-					if(eKeyboardRead()==BUTTON_1){
-						eLedState=STOP;
-					}else{
-						LedStepRight();
-						}
-				break;
-				
-				case STEP_LEFT:
-					if(eKeyboardRead()==BUTTON_1){
-						eLedState=STOP;
-					}else if(eKeyboardRead()==BUTTON_3){
-						eLedState=WIPER;
-						uiStepCounter=0;
-
-					}
-					else{
-						LedStepLeft();
-						}
-				break;
-						
-				case WIPER:
-					
-						//s3 zatrzymanie, s2 przejscie do prawa
-						
-					if(eKeyboardRead()==BUTTON_2)
-						{
-						eLedState=STEP_RIGHT;
-						}
-					else{
-						eLedState=WIPER;
-						
-						if(uiStepCounter>=1){
-							uiStepCounter++;
-							LedStepLeft();
-						}
-						else{
-							uiStepCounter--;
-							LedStepRight();
-						}
-						
-						
-						
-						
-						
-						
-						
-						
-						/*
-						
-						if(uiStepCounter>=2)
-							{
-							uiStepCounter=0;
-							}
-						else
-							{
-						uiStepCounter++;
-						  }
-							
-							
-						if(uiStepCounter<2)
-							{
-							if(uiStepCounter<1)
-								{
-								LedStepLeft();
-								}
-							else
-								{
-								LedStepRight();
-								}
-						};*/
-					}
-				break;
-			}
-		Delay(100);
-
-	};
+	InitTimer0();
+	WaitOnTimer0(1000);
 		
 };
 
