@@ -5,14 +5,14 @@
 #define NULL '\0'
 
 
-//-----------------
+//--------------------
 //	TESTY LANCUCHOW
-//-----------------
+//--------------------
 void TestOf_CopyString() {
 	char str1[] = "ul";
 	char str2[254];
 	char str3[] = "test";
-	char str4[]="\0";
+	char str4[] = "";
 
 	printf("\nCopyString\n\n");
 
@@ -34,48 +34,25 @@ void TestOf_CopyString() {
 };
 
 void TestOf_eCompareString() {
-	char cTest1Str1[] = "Ala ma kota";
-	char cTest1Str2[] = "Ala ma kota";
-	char cTest2Str1[] = "Ala ma k\0ota";
+	char str1[] = "Ala ma kota";
+	char str2[] = "Ala ma kota";
+	char str3[] = "Ala";
+	char str4[] = "";
 
 	printf("\neCompareString\n\n");
 
 	printf("Test1 - ");
 	//dwa idemtyczne string
-	   // printf("\neCompare: String1 - %s , String2 - %s\n", ucTest1Str1, ucTest1Str2);
-		if (eCompareString(cTest1Str1,cTest1Str2)==EQUAL)
-		{
-			printf("OK\n");
-		}
-		else {
-			printf("ERROR\n");
-		}
+	if (eCompareString(str1, str2) == EQUAL) printf("OK\n"); else printf("ERROR\n");
 
 	printf("Test2 - ");
-	//dwa rozne stringi, jeden dodatkowo przedwczesnie zakonczony NULLEM
+	//dwa rozne stringi
+	if (eCompareString(str1, str3) == DIFFERENT) printf("OK\n"); else printf("ERROR\n");
 
-		//printf("\neCompare: String1 - %s , String2 - %s\n", ucTest1Str1, ucTest2Str1);
-		if (eCompareString(cTest1Str1, cTest2Str1) == DIFFERENT)
-		{
-			printf("OK\n");
-		}
-		else {
-			printf("ERROR\n");
-		}
+	printf("Test3 - ");
+	//NULL na pocz¹tku
+	if (eCompareString(str1, str4) == DIFFERENT) printf("OK\n"); else printf("ERROR\n");
 
-	//printf("\n\tTest3 - NULL na pocz¹tku\n");
-	//	char str5[] = "\0";
-	//	char str6[] = "Ala ma kota";
-	//
-	//	printf("\neCompare: String1 - %s , String2 - %s\n", str5, str6);
-	//	if (eCompareString(str5, str6) == EQUAL)
-	//	{
-	//		printf("\nEQUAL\n");
-	//	}
-	//	else {
-	//		printf("\nDIFFERRENT\n");
-	//	}
-	
 }
 
 void TestOf_AppendString() {
@@ -107,15 +84,15 @@ void TestOf_AppendString() {
 };
 
 void TestOf_ReplaceCharatersInString() {
-	char str1[] = "Ala ma 99 kotów!";
-	char str2[] = "Ala ma 99 kotów!";
+	char str1[] = "Ala ma kota";
+	char str2[] = "Ala ma kota";
 
 	printf("\nReplaceCharatersInString\n\n");
 
 	printf("Test 1 - ");
 	//zamiana znaku a na x
 	ReplaceCharactersInString(str1, 'a', 'x');
-	if (eCompareString(str1,"Alx mx 99 kotów!") == EQUAL) printf("OK\n"); else printf("ERROR\n");
+	if (eCompareString(str1,"Alx mx kotx") == EQUAL) printf("OK\n"); else printf("ERROR\n");
 
 	printf("Test 2 - ");
 	//zamiana znaku a na NULL
@@ -124,10 +101,9 @@ void TestOf_ReplaceCharatersInString() {
 
 };
 
-//-----------------
+//--------------------
 //	TESTY KONWERSJI
-//-----------------
-
+//--------------------
 void TestOf_UIntToHexStr() {
 	unsigned int uint = 0xFDE8;
 	char str1[254];
@@ -152,7 +128,7 @@ void TestOf_eHexStringToUInt() {
 	unsigned int uint1 = 0;
 	char str1[] = "0xFDE8";
 	unsigned int uint2 = 0xFFFFFF;
-	char errStr2[] = "0x";
+	char str2[] = "0x";
 
 	printf("\neHexStringToUInt\n\n");
 
@@ -168,7 +144,7 @@ void TestOf_eHexStringToUInt() {
 
 	printf("Test 3 - ");
 	//nieprawdilowy format string
-	if (eHexStringToUInt(errStr2, &uint1)==ERROR) printf("OK\n"); else printf("ERROR\n");
+	if (eHexStringToUInt(str2, &uint1)==ERROR) printf("OK\n"); else printf("ERROR\n");
 };
 
 
@@ -196,10 +172,9 @@ void TestOf_AppendUIntToString() {
 };
 
 
-//-----------------
+//--------------------
 //	TESTY DEKODOWANIA
-//-----------------
-
+//--------------------
 void TestOf_ucFindTokensInString() {
 	char str1[] = "";
 	char str2[] = "   load reset";
@@ -315,7 +290,7 @@ void TestOf_DecodeMsg() {
 	//poprawny typ komunikatu
 	DecodeMsg(str1);
 	if (ucTokenNr==3
-		&& asToken[0].eType==KEYWORD && asToken[0].uValue.eKeyword ==LD
+		&& asToken[0].eType == KEYWORD && asToken[0].uValue.eKeyword == LD
 		&& asToken[1].eType == NUMBER && asToken[1].uValue.uiNumber == 0x20
 		&& asToken[2].eType == STRING && eCompareString(asToken[2].uValue.pcString, "immediately")
 		) printf("OK\n"); else printf("ERROR\n");

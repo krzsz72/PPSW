@@ -1,5 +1,4 @@
 #pragma once
-#include <stdio.h>
 #define NULL '\0'
 #define NIBBLE_BM 0xF
 

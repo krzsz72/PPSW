@@ -1,5 +1,4 @@
 #include "konwersje.h"
-#include <stdio.h>
 #define NULL '\0'
 #define NIBBLE_BM 0xF
 
@@ -23,13 +22,6 @@ void UIntToHexStr(unsigned int uiValue, char pcStr[]) {
 	pcStr[6] = NULL;
 };
 
-void TestOfUIntToHexStr() {
-	char testString[7];
-	int testInt = 65000;
-	UIntToHexStr(testInt, testString);
-	printf("\n====================\nliczba: %i\nteststring: %s\n", testInt, testString);
-
-}
 
 //enum Result { OK, ERROR };
 enum Result eHexStringToUInt(char pcStr[], unsigned int* puiValue) {
@@ -67,13 +59,6 @@ enum Result eHexStringToUInt(char pcStr[], unsigned int* puiValue) {
 	}
 };
 
-void TestOfeHexStringToUInt() {
-	char input[] = "0xFDE8";
-	unsigned int output = 0;
-	printf("blad: %i\n", eHexStringToUInt(input, &output));
-	printf("output: %i", output);
-
-};
 
 void AppendUIntToString(unsigned int uiValue, char pcDestinationStr[]) {
 	unsigned char ucCharCounter = 0;
@@ -84,14 +69,3 @@ void AppendUIntToString(unsigned int uiValue, char pcDestinationStr[]) {
 	UIntToHexStr(uiValue, pcDestinationStr + ucCharCounter);
 };
 
-void TestOfAppendUIntToString() {
-	int test1 = 16;
-	char str[254] = "Ala ma kota ";
-	AppendUIntToString(test1, str);
-	printf("test %s", str);
-};
-//
-//int main() {
-//	TestOfeHexStringToUInt();
-//	//TestOfUIntToHexStr();
-//};
