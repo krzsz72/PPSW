@@ -403,14 +403,19 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>4_1.c</FileName>
+              <FileName>keyboard.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\4_GPIO\4_1.c</FilePath>
+              <FilePath>.\keyboard.c</FilePath>
             </File>
             <File>
-              <FileName>3_1.c</FileName>
+              <FileName>led.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\3_Rej\3_1.c</FilePath>
+              <FilePath>.\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\timer.c</FilePath>
             </File>
           </Files>
         </Group>
