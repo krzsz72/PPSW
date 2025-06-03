@@ -5,8 +5,8 @@
 
 #define NULL '\0'
 
-//zadanie: 7.1
-//data: 02.06.2025
+//zadanie: 7.2
+//data: 03.06.2025
 
 
 int debugVar;
@@ -35,7 +35,7 @@ void Delay(unsigned long ulMili){
 	LedInit();	
 	KeyboardInit();
 	InitTimer0();
-	WaitOnTimer0(1000);
+	WaitOnTimer0(1000000);
 		
 };
 
