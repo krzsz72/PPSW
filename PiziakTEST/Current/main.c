@@ -7,13 +7,11 @@
 #define PIN_DETECTOR_BM (1<<10)
 
 
-// zadanie 9.1
+// zadanie 9.2
 //	10.06.25
 
 void DetectorInit(){
-	
 	IO0DIR &= ~(PIN_DETECTOR_BM);	
-	
 };
 	
 typedef enum {INACTIVE,ACTIVE} DetectorState;
@@ -26,46 +24,39 @@ DetectorState eReadDetector(){
 
 
 enum ServoState {CALIB,IDLE,IN_PROGRESS};
-
 struct Servo{
 	enum ServoState eState;
 	unsigned int uiCurrentPosition;
 	unsigned int uiDesiredPosition;	
-	
 } sServo;
 
 
 
-
-
-
-
-
 void Automat(void){
-	enum LedState{IDLE,CALIB,IN_PROGRESS};
-	static enum LedState eLedState=CALIB;
+//	enum LedState{IDLE,CALIB,IN_PROGRESS};
+	//static enum LedState eLedState=CALIB;
 	
 	//static unsigned int uiStepCounter=0;
 	
-	  switch(eLedState){
+	  switch(sServo.eState){
         case IDLE:
 					if(sServo.uiCurrentPosition==sServo.uiDesiredPosition){
-						eLedState=IDLE;
+						sServo.eState=IDLE;
            }
-					else eLedState=IN_PROGRESS;
+					else sServo.eState=IN_PROGRESS;
         break;
         
         case IN_PROGRESS:
-          if(sServo.uiCurrentPosition>sServo.uiDesiredPosition){
-						LedStepLeft();
-						sServo.uiCurrentPosition--;
-						}
           if(sServo.uiCurrentPosition<sServo.uiDesiredPosition){
-						LedStepRight();
+						LedStepLeft();
 						sServo.uiCurrentPosition++;
 						}
+          if(sServo.uiCurrentPosition>sServo.uiDesiredPosition){
+						LedStepRight();
+						sServo.uiCurrentPosition--;
+						}
 					else{
-            eLedState=IDLE;        
+            sServo.eState=IDLE;        
             }
         break;
         case CALIB:
@@ -73,7 +64,7 @@ void Automat(void){
 						sServo.uiCurrentPosition=0;
 						sServo.uiDesiredPosition=0;
 						
-						eLedState=IDLE;
+						sServo.eState=IDLE;
 						}
 						else{
             LedStepRight();//counterclockwise
@@ -87,19 +78,55 @@ void Automat(void){
 
 int debugVar;
 
+
+
+void ServoInit(unsigned int uiServoFrequency){
+	LedInit();	
+	DetectorInit();
+	
+	Timer0Interrupts_Init(1000000/uiServoFrequency,&Automat);
+
+};
+
+void ServoCalib(){
+	sServo.eState=CALIB;
+};
+
+void ServoGoTo(unsigned int uiPosition){
+	sServo.uiDesiredPosition=uiPosition;
+};
+
+
+
 int main (){
 	
 //	unsigned int iMainLoopCtr;
-	LedInit();	
 	KeyboardInit();
 	//InitTimer0();
-	DetectorInit();
 	
-	Timer0Interrupts_Init(20000,&Automat);
 	
 
 	while(1){
-			debugVar = eReadDetector();
-		//	WaitOnTimer0(1000);
+
+		if(eKeyboardRead()==BUTTON_0){
+			sServo.eState=CALIB;			
+			}
+		else if(eKeyboardRead()==BUTTON_1){
+			sServo.uiDesiredPosition=12;			
+			}
+		else if(eKeyboardRead()==BUTTON_2){
+			sServo.uiDesiredPosition=24;			
+			}
+		else if(eKeyboardRead()==BUTTON_3){
+			sServo.uiDesiredPosition=36;			
+			}
+			
+
+
+
+
+
+
+
 	}
 }
