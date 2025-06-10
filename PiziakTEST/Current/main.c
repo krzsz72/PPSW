@@ -3,10 +3,40 @@
 #include "timer_interrupts.h"
 
 
+#include <LPC21xx.H>
+#define PIN_DETECTOR_BM (1<<10)
+
+
+// zadanie 9.1
+//	10.06.25
+
+void DetectorInit(){
+	
+	IO0DIR &= ~(PIN_DETECTOR_BM);	
+	
+};
+	
+typedef enum {INACTIVE,ACTIVE} DetectorState;
+DetectorState eReadDetector(){
+		if((IO0PIN&PIN_DETECTOR_BM)==0){
+				return ACTIVE;
+				}
+		else return INACTIVE;
+};
+
+
+
+
+
+
+
+
+
+
 
 void Automat(void){
-	enum LedState{STOP,STEP_LEFT,STEP_RIGHT};
-	static enum LedState eLedState=STOP;
+	enum LedState{STOP,STEP_LEFT,STEP_RIGHT,CALIB};
+	static enum LedState eLedState=CALIB;
 	
 	static unsigned int uiStepCounter=0;
 	
@@ -37,24 +67,35 @@ void Automat(void){
             uiStepCounter++;        
             }
         break;
-      
+        case CALIB:
+          if(eReadDetector()==ACTIVE){
+							eLedState=STOP;
+						}
+						else{
+            LedStepRight();
+            uiStepCounter++;        
+            }
+        break;
+
 					}
 };
 
+
+int debugVar;
+
 int main (){
 	
-	unsigned int iMainLoopCtr;
+//	unsigned int iMainLoopCtr;
 	LedInit();	
 	KeyboardInit();
-
+	//InitTimer0();
+	DetectorInit();
+	
 	Timer0Interrupts_Init(20000,&Automat);
 	
 
 	while(1){
-	 	iMainLoopCtr++;
-		iMainLoopCtr++;
-		iMainLoopCtr++;
-		iMainLoopCtr++;
-		
+			debugVar = eReadDetector();
+		//	WaitOnTimer0(1000);
 	}
 }
