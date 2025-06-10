@@ -25,7 +25,14 @@ DetectorState eReadDetector(){
 };
 
 
+enum ServoState {CALIB,IDLE,IN_PROGRESS};
 
+struct Servo{
+	enum ServoState eState;
+	unsigned int uiCurrentPosition;
+	unsigned int uiDesiredPosition;	
+	
+} sServo;
 
 
 
@@ -35,45 +42,42 @@ DetectorState eReadDetector(){
 
 
 void Automat(void){
-	enum LedState{STOP,STEP_LEFT,STEP_RIGHT,CALIB};
+	enum LedState{IDLE,CALIB,IN_PROGRESS};
 	static enum LedState eLedState=CALIB;
 	
-	static unsigned int uiStepCounter=0;
+	//static unsigned int uiStepCounter=0;
 	
 	  switch(eLedState){
-        case STOP:
-            if(eKeyboardRead()==BUTTON_0){
-            eLedState=STEP_LEFT;
-            }
-            if(eKeyboardRead()==BUTTON_2){
-            eLedState=STEP_RIGHT;
-            }
-        
+        case IDLE:
+					if(sServo.uiCurrentPosition==sServo.uiDesiredPosition){
+						eLedState=IDLE;
+           }
+					else eLedState=IN_PROGRESS;
         break;
         
-        case STEP_LEFT:
-          if(eKeyboardRead()==BUTTON_1){
-            eLedState=STOP;
-          }else{
-            LedStepLeft();
-            uiStepCounter++;        
-            }
-        break;
-        case STEP_RIGHT:
-          if(eKeyboardRead()==BUTTON_1){
-            eLedState=STOP;
-          }else{
-            LedStepRight();
-            uiStepCounter++;        
+        case IN_PROGRESS:
+          if(sServo.uiCurrentPosition>sServo.uiDesiredPosition){
+						LedStepLeft();
+						sServo.uiCurrentPosition--;
+						}
+          if(sServo.uiCurrentPosition<sServo.uiDesiredPosition){
+						LedStepRight();
+						sServo.uiCurrentPosition++;
+						}
+					else{
+            eLedState=IDLE;        
             }
         break;
         case CALIB:
           if(eReadDetector()==ACTIVE){
-							eLedState=STOP;
+						sServo.uiCurrentPosition=0;
+						sServo.uiDesiredPosition=0;
+						
+						eLedState=IDLE;
 						}
 						else{
-            LedStepRight();
-            uiStepCounter++;        
+            LedStepRight();//counterclockwise
+            sServo.uiCurrentPosition++;        
             }
         break;
 
