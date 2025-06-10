@@ -1,7 +1,7 @@
 #include "led.h"
 #include "keyboard.h"
 #include "timer_interrupts.h"
-#include "servo.c"
+#include "servo.h"
 
 
 // zadanie 9.4

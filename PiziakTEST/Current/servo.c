@@ -1,6 +1,7 @@
 #include <LPC21xx.H>
 #include "servo.h"
 #include "timer_interrupts.h"
+#include "led.h"
 
 #define PIN_DETECTOR_BM (1<<10)
 
