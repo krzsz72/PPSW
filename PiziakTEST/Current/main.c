@@ -7,7 +7,7 @@
 #define PIN_DETECTOR_BM (1<<10)
 
 
-// zadanie 9.2
+// zadanie 9.3
 //	10.06.25
 
 void DetectorInit(){
@@ -108,19 +108,21 @@ int main (){
 
 	while(1){
 
-		if(eKeyboardRead()==BUTTON_0){
-			sServo.eState=CALIB;			
-			}
-		else if(eKeyboardRead()==BUTTON_1){
-			sServo.uiDesiredPosition=12;			
-			}
-		else if(eKeyboardRead()==BUTTON_2){
-			sServo.uiDesiredPosition=24;			
-			}
-		else if(eKeyboardRead()==BUTTON_3){
-			sServo.uiDesiredPosition=36;			
-			}
-			
+		switch(eKeyboardRead()){
+			case BUTTON_0:
+				ServoCalib();
+				break;
+			case BUTTON_1:
+				ServoGoTo(12);
+				break;
+			case BUTTON_2:
+				ServoGoTo(24);
+				break;
+			case BUTTON_3:
+				ServoGoTo(36);
+				break;
+
+};
 
 
 
