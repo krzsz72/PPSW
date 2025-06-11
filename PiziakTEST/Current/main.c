@@ -1,6 +1,7 @@
 #include "led.h"
 #include "keyboard.h"
 #include "timer_interrupts.h"
+#include "timer.h"
 #include "servo.h"
 
 
@@ -12,7 +13,10 @@ int main (){
 	
 	KeyboardInit();
 	ServoInit(50);
-
+	
+	ServoGoTo(24);
+	ServoGoTo(12);
+	
 	while(1){
 
 		switch(eKeyboardRead()){
@@ -28,10 +32,12 @@ int main (){
 			case BUTTON_3:
 				ServoGoTo(36);
 				break;
+			default:
+				break;
 
 			};
 
 
-
 	}
+
 }

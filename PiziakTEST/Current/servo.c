@@ -19,7 +19,7 @@ DetectorState eReadDetector(){
 };
 
 
-enum ServoState {CALIB,IDLE,IN_PROGRESS};
+enum ServoState {CALIB,IDLE,IN_PROGRESS,OFFSET};
 struct Servo{
 	enum ServoState eState;
 	unsigned int uiCurrentPosition;
@@ -29,19 +29,42 @@ struct Servo{
 
 
 void Automat(void){
-//	enum LedState{IDLE,CALIB,IN_PROGRESS};
-	//static enum LedState eLedState=CALIB;
-	
-	//static unsigned int uiStepCounter=0;
 	
 	  switch(sServo.eState){
+			
+			  case CALIB:
+          if(eReadDetector()==ACTIVE){
+						sServo.uiCurrentPosition=0;				
+						sServo.uiDesiredPosition=0;
+						sServo.eState=OFFSET;
+						
+						}
+						else{
+						sServo.eState=CALIB;
+            LedStepRight();//counterclockwise
+            }
+        break;
+
+			  case OFFSET:
+					if(sServo.uiCurrentPosition==12){
+						sServo.uiCurrentPosition=0;
+						sServo.uiDesiredPosition=0;
+						sServo.eState=IDLE;
+            }
+					else{
+						LedStepLeft();
+						sServo.uiCurrentPosition++;
+						sServo.eState=OFFSET;
+						}
+        break;
+						
         case IDLE:
 					if(sServo.uiCurrentPosition==sServo.uiDesiredPosition){
 						sServo.eState=IDLE;
            }
 					else sServo.eState=IN_PROGRESS;
         break;
-        
+					 
         case IN_PROGRESS:
           if(sServo.uiCurrentPosition<sServo.uiDesiredPosition){
 						LedStepLeft();
@@ -53,18 +76,6 @@ void Automat(void){
 						}
 					else{
             sServo.eState=IDLE;        
-            }
-        break;
-        case CALIB:
-          if(eReadDetector()==ACTIVE){
-						sServo.uiCurrentPosition=0;
-						sServo.uiDesiredPosition=0;
-						
-						sServo.eState=IDLE;
-						}
-						else{
-            LedStepRight();//counterclockwise
-            //sServo.uiCurrentPosition++;        
             }
         break;
 
@@ -79,15 +90,20 @@ void ServoInit(unsigned int uiServoFrequency){
 	DetectorInit();
 	
 	Timer0Interrupts_Init(1000000/uiServoFrequency,&Automat);
+	while(sServo.eState==CALIB){};
 
 };
 
 void ServoCalib(){
 	sServo.eState=CALIB;
+
 };
 
 void ServoGoTo(unsigned int uiPosition){
 	sServo.uiDesiredPosition=uiPosition;
+	sServo.eState=IN_PROGRESS;
+	while(sServo.eState==IN_PROGRESS){};
+
 };
 
 
